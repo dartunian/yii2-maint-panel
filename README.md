@@ -6,6 +6,15 @@
     <br>
 </p>
 
+To initialize, follow below instructions:
+
+<ol>
+  <li>Clone project to web root</li>
+  <li>Run ```composer update``` in web root to pull dependencies</li>
+  <li>Proceed through normal <a href="https://www.yiiframework.com/extension/yiisoft/yii2-app-advanced/doc/guide/2.0/en/start-installation#preparing-application">Yii2 advanced template preparation</a></li>
+  <li>Edit ```main.conf``` to your local settings</li>
+</ol>
+
 DIRECTORY STRUCTURE
 -------------------
 
