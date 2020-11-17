@@ -28,5 +28,5 @@ $this->title = 'Login';
 
             <?php ActiveForm::end(); ?>
             
-            <button class="btn btn-succes"></button>
+            <a class="btn btn-lg btn-success">Login with Google</a>
 </div>
