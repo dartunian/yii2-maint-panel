@@ -1,4 +1,5 @@
 <?php
+$config = parse_ini_file('/var/secure/hello.ini', true);
 return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -14,8 +15,8 @@ return [
                 'clients' => [
                     'google' => [
                         'class' => 'yii\authclient\clients\GoogleOAuth',
-                        'clientId' => '403248810587-qv5s3td09j82objs8fttv4mikarpec84.apps.googleusercontent.com',
-                        'clientSecret' => 'P6zBrzelVNgKOMGJPvaspAoa',
+                        'clientId' => $config['oauth_google_clientId'],
+                        'clientSecret' => $config['oauth_google_clientSecret'],
                     ],
                 ],
             ],        

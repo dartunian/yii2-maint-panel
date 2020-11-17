@@ -27,4 +27,6 @@ $this->title = 'Login';
                 </div>
 
             <?php ActiveForm::end(); ?>
+            
+            <button class="btn btn-succes"></button>
 </div>
