@@ -9,5 +9,15 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'authClientCollection' => [
+                'class' => 'yii\authclient\Collection',
+                'clients' => [
+                    'google' => [
+                        'class' => 'yii\authclient\clients\GoogleOAuth',
+                        'clientId' => '403248810587-qv5s3td09j82objs8fttv4mikarpec84.apps.googleusercontent.com',
+                        'clientSecret' => 'P6zBrzelVNgKOMGJPvaspAoa',
+                    ],
+                ],
+            ],        
     ],
 ];
