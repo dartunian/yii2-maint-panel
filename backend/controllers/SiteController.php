@@ -24,10 +24,10 @@ class SiteController extends Controller
             'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
-                    [
+                    /*[
                         'actions' => ['login', 'error'],
                         'allow' => true,
-                    ],
+                    ],*/
                     [
                         'actions' => ['logout', 'index'],
                         'allow' => true,
@@ -94,14 +94,11 @@ class SiteController extends Controller
     }
     public function actionCommit()
     {
-        echo 'test';
-        /*
         if (!isset($_GET['code']))
         {
             $oauthClient = new OAuth2();
             $url = $oauthClient->buildAuthUrl(); // Build authorization URL
-            echo $url;
-            //Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
+            Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
             
             // After user returns at our site:
             $code = $_GET['code'];
@@ -112,7 +109,6 @@ class SiteController extends Controller
         {
             echo 'error';
         }
-        */
     }
     /**
      * Logout action.
