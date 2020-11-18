@@ -105,6 +105,10 @@ class SiteController extends Controller
             //$accessToken = $oauthClient->fetchAccessToken($code); // Get access token
             echo $code;
         }
+        else
+        {
+            echo 'error';
+        }
     }
     /**
      * Logout action.
