@@ -5,6 +5,7 @@
 /* @var $model \common\models\LoginForm */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 
 $this->title = 'Login';
@@ -28,5 +29,5 @@ $this->title = 'Login';
 
             <?php ActiveForm::end(); ?>
             
-            <a class="btn btn-lg btn-success" href="">Login with Google</a>
+            <a class="btn btn-lg btn-success" href="<?= echo Url::to(['site/commit']) ?>">Login with Google</a>
 </div>

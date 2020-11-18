@@ -5,6 +5,9 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+
+use yii\authclient\OAuth2;
+
 use common\models\LoginForm;
 
 /**
@@ -75,7 +78,7 @@ class SiteController extends Controller
         }
 
         $this->layout = 'blank';
-
+/*
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -86,8 +89,23 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
+*/
+        return $this->render('login');
     }
-
+    public function actionCommit()
+    {
+        if (!isset($_GET['code']))
+        {
+            $oauthClient = new OAuth2();
+            $url = $oauthClient->buildAuthUrl(); // Build authorization URL
+            Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
+            
+            // After user returns at our site:
+            $code = $_GET['code'];
+            //$accessToken = $oauthClient->fetchAccessToken($code); // Get access token
+            echo $code;
+        }
+    }
     /**
      * Logout action.
      *
