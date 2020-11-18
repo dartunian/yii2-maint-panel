@@ -6,7 +6,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-use yii\authclient\OAuth2;
+use yii\authclient\clients\GoogleOAuth;
 
 use common\models\LoginForm;
 
@@ -82,7 +82,7 @@ class SiteController extends Controller
     {
         if (!isset($_GET['code']))
         {
-            $oauthClient = new OAuth2();
+            $oauthClient = new GoogleOAuth();
             $url = $oauthClient->buildAuthUrl(); // Build authorization URL
             Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
             
