@@ -94,6 +94,8 @@ class SiteController extends Controller
     }
     public function actionCommit()
     {
+        echo 'test';
+        /*
         if (!isset($_GET['code']))
         {
             $oauthClient = new OAuth2();
@@ -110,6 +112,7 @@ class SiteController extends Controller
         {
             echo 'error';
         }
+        */
     }
     /**
      * Logout action.
