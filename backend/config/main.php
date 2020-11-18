@@ -1,4 +1,6 @@
 <?php
+$config = parse_ini_file('/var/secure/hello.ini', true);
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -16,6 +18,16 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
+        'authClientCollection' => [
+                'class' => 'yii\authclient\Collection',
+                'clients' => [
+                    'google' => [
+                        'class' => 'yii\authclient\clients\Google',
+                        'clientId' => $config['oauth_google_clientId'],
+                        'clientSecret' => $config['oauth_google_clientSecret'],
+                    ],
+                ],
+            ],          
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
