@@ -98,7 +98,8 @@ class SiteController extends Controller
         {
             $oauthClient = new OAuth2();
             $url = $oauthClient->buildAuthUrl(); // Build authorization URL
-            Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
+            echo $url;
+            //Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
             
             // After user returns at our site:
             $code = $_GET['code'];
