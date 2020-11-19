@@ -96,7 +96,7 @@ class SiteController extends Controller
             $oauthClient = new Google();            
             // After user returns at our site:
             $code = $_GET['code'];
-            $accessToken = $oauthClient->fetchAccessToken($code, ['clientid' => $config['oauth_google_clientId']]); // Get access token
+            $accessToken = $oauthClient->fetchAccessToken($code); // Get access token
             echo 'code: '.$code.' token: '.$accessToken;
         }
         else
