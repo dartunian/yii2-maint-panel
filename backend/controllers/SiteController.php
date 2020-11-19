@@ -80,10 +80,10 @@ class SiteController extends Controller
     }
     public function actionCommit()
     {
+        $config = parse_ini_file('/var/secure/hello.ini', true);
+        
         if (!isset($_GET['code']))
-        {
-            $config = parse_ini_file('/var/secure/hello.ini', true);
-            
+        {   
             $oauthClient = new Google();
             $buildUrl = $oauthClient->buildAuthUrl(); // Build authorization URL
             $url = $buildUrl."&client_id=".$config['oauth_google_clientId'];
