@@ -87,7 +87,7 @@ class SiteController extends Controller
             $oauthClient = new Google();
             $url = $oauthClient->buildAuthUrl(); // Build authorization URL
             //Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
-            echo $url." / ";
+            //echo $url;
             var_dump(Yii::$app->authClientCollection);
 
         }
