@@ -33,7 +33,7 @@ $this->title = 'Login';
             
             <?= yii\authclient\widgets\AuthChoice::widget([
                 'baseAuthUrl' => ['site/commit'],
-                'clientCollection' => 'authClientCollection'
+                'clientCollection' => 'authClientCollection',
                 'popupMode' => false,
             ]) ?>            
 </div>
