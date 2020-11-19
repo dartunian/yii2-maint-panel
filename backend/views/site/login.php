@@ -30,4 +30,9 @@ $this->title = 'Login';
             <?php ActiveForm::end(); ?>
 */ ?>            
             <a class="btn btn-lg btn-success" href="<?= Url::to(['site/commit']) ?>">Login with Google</a>
+            
+            <?= yii\authclient\widgets\AuthChoice::widget([
+                 'baseAuthUrl' => ['site/commit'],
+                 'popupMode' => false,
+            ]) ?>            
 </div>

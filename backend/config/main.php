@@ -23,7 +23,7 @@ return [
                 'clients' => [
                     'google' => [
                         'class' => 'yii\authclient\clients\Google',
-                        'clientId' => 'testid',
+                        'clientId' => $config['oauth_google_clientId'],
                         'clientSecret' => $config['oauth_google_clientSecret'],
                     ],
                 ],
