@@ -86,10 +86,9 @@ class SiteController extends Controller
             
             $oauthClient = new Google();
             $buildUrl = $oauthClient->buildAuthUrl(); // Build authorization URL
-            $url = $buildUrl."&client_id=".$oauthClient->clientId;
-            //$url = $buildUrl."&client_id=".$config['oauth_google_clientId'];
-            //Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
-            echo $url;
+            $url = $buildUrl."&client_id=".$config['oauth_google_clientId'];
+            Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
+            //echo $url;
 
         }
         elseif (isset($_GET['code']))
@@ -97,7 +96,7 @@ class SiteController extends Controller
             $oauthClient = new Google();            
             // After user returns at our site:
             $code = $_GET['code'];
-            $accessToken = $oauthClient->fetchAccessToken($code); // Get access token
+            $accessToken = $oauthClient->fetchAccessToken($code, ['clientid' => $config['oauth_google_clientId']]); // Get access token
             echo 'code: '.$code.' token: '.$accessToken;
         }
         else
