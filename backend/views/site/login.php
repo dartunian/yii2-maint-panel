@@ -32,7 +32,8 @@ $this->title = 'Login';
             <a class="btn btn-lg btn-success" href="<?= Url::to(['site/commit']) ?>">Login with Google</a>
             
             <?= yii\authclient\widgets\AuthChoice::widget([
-                 'baseAuthUrl' => ['site/commit'],
-                 'popupMode' => false,
+                'baseAuthUrl' => ['site/commit'],
+                'clientCollection' => 'authClientCollection'
+                'popupMode' => false,
             ]) ?>            
 </div>
