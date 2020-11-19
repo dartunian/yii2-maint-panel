@@ -99,7 +99,7 @@ class SiteController extends Controller
             $accessToken = $oauthClient->fetchAccessToken($code); // Get access token
             //echo 'code: '.$code.' token: ';
             //var_dump($accessToken);
-            echo $oauthClient->getName();
+            echo $oauthClient->getUserAttributes();
         }
         else
         {
