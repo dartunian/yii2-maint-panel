@@ -19,11 +19,11 @@ return [
             'csrfParam' => '_csrf-backend',
         ],
         'authClientCollection' => [
-                'class' => 'yii\authclient\OAuth2',
+                'class' => 'yii\authclient\Collection',
                 'clients' => [
                     'google' => [
                         'class' => 'yii\authclient\clients\Google',
-                        'clientId' => $config['oauth_google_clientId'],
+                        'clientId' => 'testid',
                         'clientSecret' => $config['oauth_google_clientSecret'],
                     ],
                 ],
