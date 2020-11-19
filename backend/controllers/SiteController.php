@@ -97,8 +97,9 @@ class SiteController extends Controller
             // After user returns at our site:
             $code = $_GET['code'];
             $accessToken = $oauthClient->fetchAccessToken($code); // Get access token
-            echo 'code: '.$code.' token: ';
-            var_dump($accessToken);
+            //echo 'code: '.$code.' token: ';
+            //var_dump($accessToken);
+            echo $oauthClient->getName();
         }
         else
         {
