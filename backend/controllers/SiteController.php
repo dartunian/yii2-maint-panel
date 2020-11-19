@@ -85,8 +85,7 @@ class SiteController extends Controller
         if (!isset($_GET['code']))
         {   
             $oauthClient = new Google();
-            $url = $oauthClient->buildAuthUrl(['client_id' => $config['oauth_google_clientId']]); // Build authorization URL
-            //$url = $buildUrl."&client_id=".$config['oauth_google_clientId'];
+            $buildUrl = $oauthClient->buildAuthUrl(); // Build authorization URL
             Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
             //echo $url;
 

@@ -19,7 +19,7 @@ return [
             'csrfParam' => '_csrf-backend',
         ],
         'authClientCollection' => [
-                'class' => 'yii\authclient\Collection',
+                'class' => 'yii\authclient\OAuth2',
                 'clients' => [
                     'google' => [
                         'class' => 'yii\authclient\clients\Google',
