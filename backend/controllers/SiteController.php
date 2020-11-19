@@ -93,7 +93,7 @@ class SiteController extends Controller
         }
         elseif (isset($_GET['code']))
         {
-            $oauthClient = new Google();            
+            $oauthClient = Yii::$app->authClientCollection->getClient('google');        
             // After user returns at our site:
             $code = $_GET['code'];
             $accessToken = $oauthClient->fetchAccessToken($code); // Get access token
