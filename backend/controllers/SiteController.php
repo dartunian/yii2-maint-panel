@@ -78,13 +78,13 @@ class SiteController extends Controller
 */
         return $this->render('login');
     }
-    public function actionCommit()
+    public function actionAuth()
     {
         $config = parse_ini_file('/var/secure/hello.ini', true);
         
         if (!isset($_GET['code']))
         {   
-            $oauthClient = new yii\authclient\clients\Google();
+            $oauthClient = new Google();
             $url = $oauthClient->buildAuthUrl(); // Build authorization URL
             Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
             //echo $url;
