@@ -20,11 +20,6 @@ return [
         ],
         'authClientCollection' => [
                 'class' => 'yii\authclient\Collection',
-                    'OAuth2' => [
-                        'class' => 'yii\authclient\OAuth2',
-                            'clientId' => $config['oauth_google_clientId'],
-                            'clientSecret' => $config['oauth_google_clientSecret'],                        
-                    ],
                 'clients' => [
                     'google' => [
                         'class' => 'yii\authclient\clients\Google',
