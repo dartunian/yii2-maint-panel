@@ -122,7 +122,7 @@ class SiteController extends Controller
                 // user exists, log in
                 Yii::$app->user->login($findUser);
                 
-                return $this->goHome();        
+                $this->redirect(['site/index']);
             }
             else
             {
@@ -143,7 +143,7 @@ class SiteController extends Controller
                 
                 Yii::$app->user->login($registerUser);
         
-                return $this->goHome();        
+                $this->redirect(['site/index']);
             }
         }
         else
