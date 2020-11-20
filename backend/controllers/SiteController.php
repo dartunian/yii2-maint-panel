@@ -110,7 +110,7 @@ class SiteController extends Controller
             $code = $_GET['code'];
             $accessToken = $oauthClient->fetchAccessToken($code); // Get access token
             $userAttributes = $oauthClient->getUserAttributes();
-            $userGoogleId = $userAttributes->id;
+            $userGoogleId = ArrayHelper::getValue($userAttributes, 'id');
             
             $findUser = User::find()
                 ->where(['g_id' => $userGoogleId])
