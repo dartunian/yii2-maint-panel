@@ -8,6 +8,7 @@ use yii\filters\AccessControl;
 
 use yii\authclient\clients\Google;
 
+use common\models\User;
 use common\models\LoginForm;
 
 /**
@@ -101,19 +102,28 @@ class SiteController extends Controller
             $oauthClient = Yii::$app->authClientCollection->getClient('google');
             $url = $oauthClient->buildAuthUrl(); // Build authorization URL
             Yii::$app->getResponse()->redirect($url); // Redirect to authorization URL.
-            //echo $url;
-            //var_dump(Yii::$app->authClientCollection->getClient('google'));
-
         }
         elseif (isset($_GET['code']))
         {
-            $oauthClient = Yii::$app->authClientCollection->getClient('google');        
+            $oauthClient = Yii::$app->authClientCollection->getClient('google');       
             // After user returns at our site:
             $code = $_GET['code'];
             $accessToken = $oauthClient->fetchAccessToken($code); // Get access token
-            //echo 'code: '.$code.' token: ';
-            //var_dump($accessToken);
-            var_dump($oauthClient->getUserAttributes());
+            $userAttributes = $oauthClient->getUserAttributes();
+            $userGoogleId = $userAttributes->id;
+            
+            $findUser = User::find()
+                ->where(['g_id' => $userGoogleId])
+                ->one();
+            
+            if(isset($findUser))
+            {
+                echo "user exists";
+            }
+            else
+            {
+                echo "user does not exist";
+            }
         }
         else
         {

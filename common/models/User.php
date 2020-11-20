@@ -93,14 +93,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByPasswordResetToken($token)
     {
-        if (!static::isPasswordResetTokenValid($token)) {
-            return null;
-        }
-
-        return static::findOne([
-            'password_reset_token' => $token,
-            'status' => self::STATUS_ACTIVE,
-        ]);
+        throw new NotSupportedException('"findByPasswordResetToken" is not implemented.');
     }
 
     /**
@@ -124,13 +117,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function isPasswordResetTokenValid($token)
     {
-        if (empty($token)) {
-            return false;
-        }
-
-        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
-        $expire = Yii::$app->params['user.passwordResetTokenExpire'];
-        return $timestamp + $expire >= time();
+        throw new NotSupportedException('"isPasswordResetTokenValid" is not implemented.');
     }
 
     /**
@@ -146,7 +133,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getAuthKey()
     {
-        return $this->auth_key;
+        throw new NotSupportedException('"getAuthKey" is not implemented.');
     }
 
     /**
@@ -154,7 +141,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function validateAuthKey($authKey)
     {
-        return $this->getAuthKey() === $authKey;
+        throw new NotSupportedException('"validateAuthKey" is not implemented.');
     }
 
     /**
@@ -165,7 +152,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function validatePassword($password)
     {
-        return Yii::$app->security->validatePassword($password, $this->password_hash);
+        throw new NotSupportedException('"validatePassword" is not implemented.');
     }
 
     /**
@@ -175,7 +162,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function setPassword($password)
     {
-        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+        throw new NotSupportedException('"setPassword" is not implemented.');
     }
 
     /**
@@ -183,7 +170,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function generateAuthKey()
     {
-        $this->auth_key = Yii::$app->security->generateRandomString();
+        throw new NotSupportedException('"generateAuthKey" is not implemented.');
     }
 
     /**
@@ -191,7 +178,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function generatePasswordResetToken()
     {
-        $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+        throw new NotSupportedException('"generatePasswordResetToken" is not implemented.');
     }
 
     /**
@@ -199,7 +186,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function generateEmailVerificationToken()
     {
-        $this->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
+        throw new NotSupportedException('"generateEmailVerificationToken" is not implemented.');
     }
 
     /**
@@ -207,6 +194,6 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function removePasswordResetToken()
     {
-        $this->password_reset_token = null;
+        throw new NotSupportedException('"removePasswordResetToken" is not implemented.');
     }
 }
