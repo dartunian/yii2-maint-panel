@@ -120,6 +120,14 @@ class SiteController extends Controller
             if(isset($findUser))
             {
                 // user exists, log in
+                $findUser->updated_at = time();
+                $findUser->g_name = ArrayHelper::getValue($userAttributes, 'name');
+                $findUser->g_givenname = ArrayHelper::getValue($userAttributes, 'given_name');
+                $findUser->g_familyname = ArrayHelper::getValue($userAttributes, 'family_name');
+                $findUser->g_picture = ArrayHelper::getValue($userAttributes, 'picture');
+                $findUser->g_locale = ArrayHelper::getValue($userAttributes, 'locale');                
+                $findUser->save();
+                
                 Yii::$app->user->login($findUser);
                 
                 $this->redirect(['site/index']);
@@ -127,8 +135,8 @@ class SiteController extends Controller
             else
             {
                 // user does not exist, create a new one                
-                $registerUser = new User();
-                $registerUser->username =
+                $registerUser = new User();                
+                $registerUser->username = strstr(ArrayHelper::getValue($userAttributes, 'email'), '@', true);
                 $registerUser->email = ArrayHelper::getValue($userAttributes, 'email');
                 $registerUser->created_at = time();
                 $registerUser->updated_at = time();
