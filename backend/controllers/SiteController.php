@@ -119,12 +119,14 @@ class SiteController extends Controller
             
             if(isset($findUser))
             {
-                echo "user exists";
+                // user exists, log in
+                Yii::$app->user->login($findUser);
+                
+                return $this->goHome();        
             }
             else
             {
-                // user does not exist, create a new one
-                
+                // user does not exist, create a new one                
                 $registerUser = new User();
                 $registerUser->username =
                 $registerUser->email = ArrayHelper::getValue($userAttributes, 'email');
@@ -139,7 +141,9 @@ class SiteController extends Controller
                 $registerUser->g_locale = ArrayHelper::getValue($userAttributes, 'locale');
                 $registerUser->save();
                 
-                
+                Yii::$app->user->login($registerUser);
+        
+                return $this->goHome();        
             }
         }
         else
