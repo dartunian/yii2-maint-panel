@@ -123,7 +123,23 @@ class SiteController extends Controller
             }
             else
             {
-                echo "user does not exist";
+                // user does not exist, create a new one
+                
+                $registerUser = new User();
+                $registerUser->username =
+                $registerUser->email = ArrayHelper::getValue($userAttributes, 'email');
+                $registerUser->created_at = time();
+                $registerUser->updated_at = time();
+                //$registerUser->verification_token =
+                $registerUser->g_id = ArrayHelper::getValue($userAttributes, 'id');
+                $registerUser->g_name = ArrayHelper::getValue($userAttributes, 'name');
+                $registerUser->g_givenname = ArrayHelper::getValue($userAttributes, 'given_name');
+                $registerUser->g_familyname = ArrayHelper::getValue($userAttributes, 'family_name');
+                $registerUser->g_picture = ArrayHelper::getValue($userAttributes, 'picture');
+                $registerUser->g_locale = ArrayHelper::getValue($userAttributes, 'locale');
+                $registerUser->save();
+                
+                
             }
         }
         else
