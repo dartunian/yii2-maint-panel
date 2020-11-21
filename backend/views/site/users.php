@@ -10,6 +10,8 @@ use yii\bootstrap\ActiveForm;
 use common\models\User;
 use kartik\grid\GridView;
 
+$users = User::find()->all();
+
 $this->title = 'Users';
 ?>
 <div>
@@ -24,7 +26,7 @@ $this->title = 'Users';
 			];
 			echo GridView::widget([
 				'id' => 'kv-grid-demo',
-				//'dataProvider' => $dataProvider,
+				'dataProvider' => $users,
 				//'filterModel' => $searchModel,
 				'columns' => $gridColumns, // check the configuration for grid columns by clicking button above
 				'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
