@@ -68,13 +68,14 @@ class SiteController extends Controller
         return $this->render('index');
     }
     public function actionUsers()
-    {
-        $dataProvider = User::find()
-            ->all();
-            
+    {    
+        $searchModel = new User();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize = $dataProvider->getTotalCount();   //-1 : disable
+
         return $this->render('users', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            //'model' => $this->findModel($id),
         ]);
     }
     /**
