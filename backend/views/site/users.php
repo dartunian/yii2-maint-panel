@@ -39,7 +39,7 @@ $this->title = 'Users';
 					],
 					'{export}',
 					'{toggleData}',
-				]
+				],
 				// set export properties
 				/*
 				'export' => [
