@@ -10,7 +10,9 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Login';
 ?>
-<div class="site-login">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+     <h1><?= Html::encode($this->title) ?></h1>
 <?php /* 
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
@@ -31,3 +33,4 @@ $this->title = 'Login';
                 Sign in with Google
             </a>
 </div>
+<div class="col-md-4"></div>
