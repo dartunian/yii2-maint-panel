@@ -69,7 +69,13 @@ class SiteController extends Controller
     }
     public function actionUsers()
     {
-        return $this->render('users');
+        $dataProvider = User::find()
+            ->all();
+            
+        return $this->render('users', [
+            'dataProvider' => $dataProvider,
+            //'model' => $this->findModel($id),
+        ]);
     }
     /**
      * Login action.
