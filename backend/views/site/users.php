@@ -32,6 +32,7 @@ $this->title = 'Users';
 				'filterRowOptions' => ['class' => 'kartik-sheet-style'],
 				'pjax' => true, // pjax is set to always true for this demo
 				// set your toolbar
+				/*				
 				'toolbar' =>  [
 					['content' => 
 						Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => Yii::t('kvgrid', 'Add Book'), 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
@@ -41,7 +42,7 @@ $this->title = 'Users';
 					'{toggleData}',
 				],
 				// set export properties
-				/*
+
 				'export' => [
 					'fontAwesome' => true
 				],
