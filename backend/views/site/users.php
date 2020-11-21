@@ -7,6 +7,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
+use common\models\User;
 
 $this->title = 'Users';
 ?>
@@ -16,7 +17,13 @@ $this->title = 'Users';
             <?= Html::encode($this->title) ?>
         </div>
         <div class="panel-body">
-
+			<?php
+			$getUsers = User::find()->all();
+			
+			foreach($getUsers as $user)
+				echo $user->username;
+			endforeach;
+			?>
         </div>
     </div>
 </div>
