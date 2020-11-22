@@ -75,7 +75,7 @@ class SiteController extends Controller
             'pagination' => [
                 'pageSize' => 10,
             ],
-        );
+        ]);
 
         if(Yii::$app->request->isAjax)
         {
