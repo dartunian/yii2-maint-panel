@@ -17,7 +17,7 @@
         "yiisoft/yii2-authclient": "~2.2.0",
         "kartik-v/yii2-krajee-base": "@dev",        
         "kartik-v/yii2-grid": "@dev",
-        "kartik-v/yii2-widget-switchinput": "*",
+        "kartik-v/yii2-widget-switchinput": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
