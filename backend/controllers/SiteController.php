@@ -75,7 +75,7 @@ class SiteController extends Controller
         
         $searchModel = new User();
         $dataProvider = new ActiveDataProvider([
-            'query' => $query
+            'query' => $query,
             'pagination' => [
                 'pageSize' => 10,
             ],
