@@ -3,14 +3,23 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use kartik\widgets\ActiveForm;
+use kartik\builder\Form;
+use kartik\builder\FormGrid;
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
+
+$form = ActiveForm::begin();
+echo Form::widget([
+    //'model' => $model,
+    'form' => $form,
+    'columns' => 2,
+    'attributes' => [
+        'username' => ['type'=>Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter username...']],
+        'password' => ['type'=>Form::INPUT_PASSWORD, 'options'=>['placeholder'=>'Enter password...']],
+        'rememberMe' => ['type'=>Form::INPUT_CHECKBOX],
+    ]
+]);
+ActiveForm::end();
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>This is the About page. You may modify the following file to customize its content:</p>
-
-    <code><?= __FILE__ ?></code>
-</div>
