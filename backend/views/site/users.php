@@ -23,8 +23,6 @@ $panelTemplate = ("
 </div>
 ");
 
-$switchValue = $model->status==10 ? $model->status!=10;
-
 $this->title = 'Users';
 
 ?>
@@ -169,7 +167,7 @@ $this->title = 'Users';
 					'value' => function ($model) {
 						return SwitchInput::widget([
 							'name' => $model->id,
-							'value' => $switchValue,
+							'value' => $model->status == 10,
 							'disabled' => $model->status == 0,
 							'pluginOptions' => [
 								'size' => 'mini',
