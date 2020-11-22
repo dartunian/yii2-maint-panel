@@ -14,6 +14,7 @@ use common\models\User;
 
 use kartik\grid\GridView;
 use kartik\widgets\SwitchInput;
+use kartik\switchinput\SwitchInput;
 
 $panelTemplate = ("
 <div class='panel-{type}'>
