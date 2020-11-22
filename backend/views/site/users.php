@@ -142,6 +142,13 @@ $this->title = 'Users';
 				'mergeHeader' => true,
 			],
 			[
+				'label' => 'Email',
+				'hAlign' => 'center',
+				'vAlign' => 'middle',
+				'attribute' => 'email',
+				'mergeHeader' => true,
+			],			
+			[
 				'label' => 'Last IP',
 				'hAlign' => 'center',
 				'vAlign' => 'middle',
