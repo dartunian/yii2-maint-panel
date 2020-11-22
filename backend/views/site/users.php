@@ -105,7 +105,7 @@ $this->title = 'Users';
 					'vAlign' => 'middle',
 					'mergeHeader' => true,
 					'format' => 'raw',
-					'value' => $model->status != 0
+					'value' => function($data){$data->status != 0}
 				],
 				[
 					'label' => 'Locale',
