@@ -27,22 +27,32 @@ $panelTemplate = ("
 $url2 = Url::toRoute(['site/switch-status']);
 
 $script = <<< JS
-function sendToggleRequest(status, id) {
-	$.ajax({
-		type: 'POST',
-		url:'$url2',
-		data:{status:status, id:id},
-		success:function(data){
+jQuery(document).ready(function ($) {
+    function init(){
+		function sendToggleRequest(status, id) {
+			$.ajax({
+				type: 'POST',
+				url:'$url2',
+				data:{status:status, id:id},
+				success:function(data){
+				}
+			});
 		}
-	});
-}
-
-$('.bootstrap-switch').on('switchChange.bootstrapSwitch', function (event, state) {
-	var id = $(this).parent().attr('name');
-	var status = state;
-	//alert(id + ' ' + status);
-	sendToggleRequest(status, id);
-});
+		
+		$('.bootstrap-switch').on('switchChange.bootstrapSwitch', function (event, state) {
+			var id = $(this).parent().attr('name');
+			var status = state;
+			//alert(id + ' ' + status);
+			sendToggleRequest(status, id);
+		});
+    }
+	init();
+    
+    $(document).on('ready pjax:end', function (event) {
+        init();
+    });
+    
+});		
 JS;
 
 $this->registerJs($script, \yii\web\View::POS_READY);
