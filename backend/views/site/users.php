@@ -92,62 +92,20 @@ $this->title = 'Users';
 					}
 				],
 				[
-					'class' => 'kartik\grid\EditableColumn',
-					//'filterType' => GridView::FILTER_TYPEAHEAD,
-					'label' => 'File Name',
-					'hAlign' => 'center',
-					'vAlign' => 'middle',
-					'attribute' => 'name',
-					'refreshGrid' => true,
-					'editableOptions' => [
-						'options' => ['maxlength' => 30],
-						'formOptions' => [
-						   'action' => Url::toRoute(['file/edit-file-name']),
-						]
-					]
-				],
-				[
 					'label' => 'Name',
 					'hAlign' => 'center',
 					'vAlign' => 'middle',
 					'attribute' => 'g_name',
 				],
-				[
-					'attribute' => 'time',
-					'label' => 'Date',
-					'hAlign' => 'center',
-					'vAlign' => 'middle',
-					'format' => ['date', 'php:j F Y h:i A'],
-					'filterType' => GridView::FILTER_DATE,
-					'filterWidgetOptions' => [
-						'pluginOptions' => [
-							'convertFormat' => true,
-							'format' => 'yyyy-mm-dd',
-							'autoWidget' => true,
-							'autoclose' => true,
-						]
-					],
-				],                      
-				[
-					'label' => 'File Ext.',
-					'hAlign' => 'center',
-					'vAlign' => 'middle',
-					'mergeHeader' => true,
-					'format' => 'raw',
-					'value' => function ($model) {
-						return "<span class='label label-default'>." . $model->type . "</span>";
-					}
-				],
+				[                     
 				[
 					'class' => 'kartik\grid\BooleanColumn',
-					'label' => 'Shared File',
+					'label' => 'Active',
 					'hAlign' => 'center',
 					'vAlign' => 'middle',
 					'mergeHeader' => true,
 					'format' => 'raw',
-					'value' => function ($model) {
-						return !empty($model->user !== Yii::$app->user->identity->ms_id);
-						//return in_array(Yii::$app->user->identity->id, array($model->auth_id_list));
+					'value' => $model->status != 0
 					}
 				],
 				[
