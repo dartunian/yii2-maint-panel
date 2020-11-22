@@ -88,10 +88,10 @@ $this->title = 'Users';
 			],*/                    
 			[
 				'format'=>'raw',
+				'mergeHeader' => true,								
 				'value' => function($data){
 					return ("<img src='" . $data->g_picture . "' style='max-width:30px;' class='img-thumbnail'>");
 				}
-				'mergeHeader' => true,				
 			],
 			[
 				'label' => 'Name',
