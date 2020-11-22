@@ -122,7 +122,23 @@ $this->title = 'Users';
 					'vAlign' => 'middle',
 					'mergeHeader' => true,
 					'format' => 'raw',
-					'value' => true,
+					'value' => function ($model) {
+						if($model->status==10){$val1=true;}else{$val1=false;}
+						if($model->status==0){$val2=true;}else{$val2=false;}
+						return SwitchInput::widget([
+							'name' => $model->id,
+							'value' => $val1,
+							'disabled' => $val2,
+							'pluginOptions' => [
+								'size' => 'mini',
+								'onColor' => 'success', 
+								'onText' => 'ON',
+								'offText' => 'OFF',
+							],
+								//'options' => ['id' => $model->id,],
+								'containerOptions' => ['style' => 'margin: 0px;', 'name' => $model->id,],
+						]);
+					}
 				],					
 			],
 		]
