@@ -29,7 +29,7 @@ $this->title = 'Users';
 ?>
 
 <?php        
-	if(isset($dataProvider))
+	if(isset($dataProvider)) 
 	{
 		//$dataProvider->sort = ['defaultOrder' => ['id' => 'SORT_DESC']];
 		
@@ -72,74 +72,72 @@ $this->title = 'Users';
 			],
 			'tableOptions' => ['style' => 'margin:0px;'],
 			'columns' => [
-				[
-						'class' => 'kartik\grid\ExpandRowColumn',
-						'width' => '50px',
-						'value' => function ($model, $key, $index, $column) {
-							return GridView::ROW_COLLAPSED;
-						 },
-						'detail' => function ($model, $key, $index, $column) {
-							return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model]);
-						 },
-						'headerOptions' => ['class' => 'kartik-sheet-style'],
-						'expandOneOnly' => true,
-						'expandIcon' => '',
-						'collapseIcon' => '',
-				],                      
-				[
-					'format'=>'raw',
-					'value' => function($data){
-						return ("<img src='" . $data->g_picture . "' style='max-width:30px;' class='img-thumbnail'>");
-					}
-				],
-				[
-					'label' => 'Name',
-					'hAlign' => 'center',
-					'vAlign' => 'middle',
-					'attribute' => 'g_name',
-				],
-				[                     
-				[
-					'class' => 'kartik\grid\BooleanColumn',
-					'label' => 'Active',
-					'hAlign' => 'center',
-					'vAlign' => 'middle',
-					'mergeHeader' => true,
-					'format' => 'raw',
-					'value' => function($data){$data->status != 0;}
-				],
-				[
-					'label' => 'Locale',
-					'attribute' => 'g_locale',
-					'hAlign' => 'center',
-					'vAlign' => 'middle',
-					'mergeHeader' => true,
-				],				
-				[
-					//'class' => 'kartik\grid\EditableColumn',
-					'label' => 'Authorized',
-					'hAlign' => 'center',
-					'vAlign' => 'middle',
-					'mergeHeader' => true,
-					'format' => 'raw',
-					'value' => function ($model) {
-						if($model->status==10){$val1=true;}else{$val1=false;}
-						if($model->status==0){$val2=true;}else{$val2=false;}
-						return SwitchInput::widget([
-							'name' => $model->id,
-							'value' => $val1,
-							'disabled' => $val2,
-							'pluginOptions' => [
-								'size' => 'mini',
-								'onColor' => 'success', 
-								'onText' => 'ON',
-								'offText' => 'OFF',
-							],
-								//'options' => ['id' => $model->id,],
-								'containerOptions' => ['style' => 'margin: 0px;', 'name' => $model->id,],
-						]);
-					}
-				],					
+			[
+					'class' => 'kartik\grid\ExpandRowColumn',
+					'width' => '50px',
+					'value' => function ($model, $key, $index, $column) {
+						return GridView::ROW_COLLAPSED;
+					 },
+					'detail' => function ($model, $key, $index, $column) {
+						return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model]);
+					 },
+					'headerOptions' => ['class' => 'kartik-sheet-style'],
+					'expandOneOnly' => true,
+					'expandIcon' => '',
+					'collapseIcon' => '',
+			],                      
+			[
+				'format'=>'raw',
+				'value' => function($data){
+					return ("<img src='" . $data->g_picture . "' style='max-width:30px;' class='img-thumbnail'>");
+				}
+			],
+			[
+				'label' => 'Name',
+				'hAlign' => 'center',
+				'vAlign' => 'middle',
+				'attribute' => 'g_name',
+			],
+			[
+				'class' => 'kartik\grid\BooleanColumn',
+				'label' => 'Active',
+				'hAlign' => 'center',
+				'vAlign' => 'middle',
+				'mergeHeader' => true,
+				'format' => 'raw',
+				'value' => function($data){$data->status != 0;}
+			],
+			[
+				'label' => 'Locale',
+				'attribute' => 'g_locale',
+				'hAlign' => 'center',
+				'vAlign' => 'middle',
+				'mergeHeader' => true,
+			],				
+			[
+				//'class' => 'kartik\grid\EditableColumn',
+				'label' => 'Authorized',
+				'hAlign' => 'center',
+				'vAlign' => 'middle',
+				'mergeHeader' => true,
+				'format' => 'raw',
+				'value' => function ($model) {
+					if($model->status==10){$val1=true;}else{$val1=false;}
+					if($model->status==0){$val2=true;}else{$val2=false;}
+					return SwitchInput::widget([
+						'name' => $model->id,
+						'value' => $val1,
+						'disabled' => $val2,
+						'pluginOptions' => [
+							'size' => 'mini',
+							'onColor' => 'success', 
+							'onText' => 'ON',
+							'offText' => 'OFF',
+						],
+							//'options' => ['id' => $model->id,],
+							'containerOptions' => ['style' => 'margin: 0px;', 'name' => $model->id,],
+					]);
+				}				
 			],
 		]
 	]);
