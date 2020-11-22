@@ -13,6 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 $form = ActiveForm::begin();
 echo Form::widget([
     //'model' => $model,
+    'formName' => 'requestForm',
     'form' => $form,
     'columns' => 2,
     'attributes' => [
