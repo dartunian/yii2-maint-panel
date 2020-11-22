@@ -11,6 +11,9 @@ $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 
 $form = ActiveForm::begin(['type'=>ActiveForm::TYPE_VERTICAL]);
+?>
+<div class="well">
+<?php
 echo FormGrid::widget([
     //'model'=>$model,
     'formName' => 'requestForm',
@@ -74,5 +77,8 @@ echo FormGrid::widget([
         ],
     ]
 ]);
+?>
+</div>
+<?php
 ActiveForm::end();
 ?>
