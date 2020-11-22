@@ -128,6 +128,13 @@ $this->title = 'Users';
 				}
 			],
 			[
+				'label' => 'Username',
+				'hAlign' => 'center',
+				'vAlign' => 'middle',
+				'attribute' => 'username',
+				'mergeHeader' => true,
+			],			
+			[
 				'label' => 'Name',
 				'hAlign' => 'center',
 				'vAlign' => 'middle',
