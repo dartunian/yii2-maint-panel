@@ -18,7 +18,6 @@ use kartik\switchinput\SwitchInput;
 $panelTemplate = ("
 <div class='panel-{type}'>
 	{panelBefore}
-	{toolbar}
     {panelHeading}
     {items}
     <div class='text-center'>{panelFooter}</div>
