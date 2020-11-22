@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use kartik\form\ActiveForm;
 use kartik\builder\Form;
 use kartik\builder\FormGrid;
 
