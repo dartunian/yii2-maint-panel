@@ -122,12 +122,10 @@ $this->title = 'Users';
 					'mergeHeader' => true,
 					'format' => 'raw',
 					'value' => function ($model) {
-						if($model->status==10){$val1=true;}else{$val1=false;}
-						if($model->status==0){$val2=true;}else{$val2=false;}
 						return SwitchInput::widget([
 							'name' => $model->id,
-							'value' => $val1,
-							'disabled' => $val2,
+							'value' => true,
+							'disabled' => false,
 							'pluginOptions' => [
 								'size' => 'mini',
 								'onColor' => 'success', 
