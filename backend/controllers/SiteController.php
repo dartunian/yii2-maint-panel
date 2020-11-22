@@ -70,7 +70,7 @@ class SiteController extends Controller
     public function actionUsers()
     {    
         $searchModel = new User();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->find(Yii::$app->request->queryParams);
         $dataProvider->pagination->pageSize = $dataProvider->getTotalCount();   //-1 : disable
 
         return $this->render('users', [
