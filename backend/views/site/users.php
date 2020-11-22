@@ -18,7 +18,6 @@ use kartik\switchinput\SwitchInput;
 $panelTemplate = ("
 <div class='panel-{type}'>
     {panelHeading}
-    {panelBefore}
     {items}
     <div class='text-center'>{panelFooter}</div>
 </div>
@@ -59,17 +58,6 @@ $this->title = 'Users';
 				'after' => false,
 			],
 			'panelTemplate' => $panelTemplate,
-			'toolbar' =>  [
-				['content' => 
-					"<div class='btn-group'>" .
-						"<a class='btn btn-default' href='" . Url::toRoute(['site/users']) . "' id='rfrshbtn' data-pjax='0'><span class='glyphicon glyphicon-repeat'></span></a>" .
-						//"<button class='btn btn-default'><span class='glyphicon glyphicon-plus'></span></button>" .
-						//"<button class='btn btn-default' id='dltrowbtn'><span class='glyphicon glyphicon-trash'></span></button>" .
-					"</div>"
-				],
-				'{export}',
-				//'{toggleData}',
-			],
 			'tableOptions' => ['style' => 'margin:0px;'],
 			'columns' => [
 			/*[
