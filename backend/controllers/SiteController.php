@@ -6,6 +6,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
+use yii\data\ActiveDataProvider;
 
 use yii\authclient\clients\Google;
 
@@ -70,9 +71,17 @@ class SiteController extends Controller
     public function actionUsers()
     {    
         $searchModel = new User();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->pagination->pageSize = $dataProvider->getTotalCount();   //-1 : disable
+        $dataProvider = new ActiveDataProvider([
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+        );
 
+        if(Yii::$app->request->isAjax)
+        {
+            $dataProvider = $searchModel->search(Yii::$app->request->get());
+        }
+            
         return $this->render('users', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
