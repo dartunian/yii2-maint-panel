@@ -45,6 +45,8 @@ $('.bootstrap-switch').on('switchChange.bootstrapSwitch', function (event, state
 });
 JS;
 
+$this->registerJs($script, \yii\web\View::POS_READY);
+
 $this->title = 'Users';
 
 ?>
@@ -62,7 +64,7 @@ $this->title = 'Users';
 			'pjaxSettings' => [
 				//'neverTimeout'=>true,
 				//'beforeGrid'=>'My fancy content before.',
-				//'afterGrid' => $this->registerJs($script, \yii\web\View::POS_READY),
+				'afterGrid' => $this->registerJs($script, \yii\web\View::POS_READY),
 				/*'clientOptions' => [
 						'showNoty' => false
 				],*/
