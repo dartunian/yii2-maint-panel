@@ -69,9 +69,13 @@ class SiteController extends Controller
         return $this->render('index');
     }
     public function actionUsers()
-    {    
+    {
+        
+        $query = User::find()->all();
+        
         $searchModel = new User();
         $dataProvider = new ActiveDataProvider([
+            'query' => $query
             'pagination' => [
                 'pageSize' => 10,
             ],
