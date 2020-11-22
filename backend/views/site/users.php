@@ -167,7 +167,7 @@ $this->title = 'Users';
 					'value' => function ($model) {
 						return SwitchInput::widget([
 							'name' => $model->id,
-							'value' => if($model->status == 10){return true}else{return false},
+							'value' => $model->status==10 ? $model->status!=10,
 							'disabled' => $model->status == 0,
 							'pluginOptions' => [
 								'size' => 'mini',
