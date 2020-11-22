@@ -135,6 +135,13 @@ $this->title = 'Users';
 				'mergeHeader' => true,
 			],
 			[
+				'label' => 'Last IP',
+				'hAlign' => 'center',
+				'vAlign' => 'middle',
+				'attribute' => 'last_ip',
+				'mergeHeader' => true,
+			],		
+			[
 				'class' => 'kartik\grid\BooleanColumn',
 				'label' => 'Active',
 				'hAlign' => 'center',
