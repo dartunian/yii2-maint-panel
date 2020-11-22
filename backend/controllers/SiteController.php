@@ -71,7 +71,7 @@ class SiteController extends Controller
     public function actionUsers()
     {
         
-        $query = User::find()->all();
+        $query = User::find();
         
         $searchModel = new User();
         $dataProvider = new ActiveDataProvider([
