@@ -110,11 +110,11 @@ class SiteController extends Controller
                     
                 if($find->status==10)
                 {
-                    $find->status==9
+                    $find->status==9;
                 }
                 elseif($find->status==9)
                 {
-                    $find->status==10
+                    $find->status==10;
                 }
                 elseif($find->status==0)
                 {
