@@ -122,6 +122,8 @@ $this->title = 'Users';
 			],*/                    
 			[
 				'format'=>'raw',
+				'hAlign' => 'center',
+				'vAlign' => 'middle',				
 				'mergeHeader' => true,
 				'value' => function($data){
 					return ("<img src='" . $data->g_picture . "' style='max-width:30px;' class='img-thumbnail'>");
