@@ -73,7 +73,6 @@ echo FormGrid::widget([
             ],
         ],
     ]
-    ]
 ]);
 ActiveForm::end();
 ?>
