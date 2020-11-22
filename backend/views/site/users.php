@@ -72,7 +72,7 @@ $this->title = 'Users';
 			],
 			'tableOptions' => ['style' => 'margin:0px;'],
 			'columns' => [
-			[
+			/*[
 					'class' => 'kartik\grid\ExpandRowColumn',
 					'width' => '50px',
 					'value' => function ($model, $key, $index, $column) {
@@ -85,7 +85,7 @@ $this->title = 'Users';
 					'expandOneOnly' => true,
 					'expandIcon' => '',
 					'collapseIcon' => '',
-			],                      
+			],*/                    
 			[
 				'format'=>'raw',
 				'value' => function($data){
