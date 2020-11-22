@@ -24,6 +24,27 @@ $panelTemplate = ("
 </div>
 ");
 
+$url2 = Url::toRoute(['site/switch-status']);
+
+$script = <<< JS
+function sendToggleRequest(status, id) {
+	$.ajax({
+		type: 'POST',
+		url:'$url2',
+		data:{status:status, id:id},
+		success:function(data){
+		}
+	});
+}
+
+$('.bootstrap-switch').on('switchChange.bootstrapSwitch', function (event, state) {
+	var id = $(this).parent().attr('name');
+	var status = state;
+	//alert(id + ' ' + status);
+	sendToggleRequest(status, id);
+});
+JS;
+
 $this->title = 'Users';
 
 ?>

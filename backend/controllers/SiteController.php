@@ -91,6 +91,42 @@ class SiteController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionSwitchStatus()
+    {
+        if(Yii::$app->request->isAjax)
+        {
+            if (Yii::$app->request->post('id')) {
+
+                \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                
+                $data = Yii::$app->request->post();
+                $id = $data['id'];
+                $status = $data['status'];
+                $authorized = (int) filter_var($status, FILTER_VALIDATE_BOOLEAN);
+                
+                $find = User::find()
+                    ->where(['id' => $id])
+                    ->one();
+                    
+                if($find->status==10)
+                {
+                    $find->status==9
+                }
+                elseif($find->status==9)
+                {
+                    $find->status==10
+                }
+                elseif($find->status==0)
+                {
+                    throw new NotSupportedException('User account has been deleted.');
+                }
+                
+                $find->save();
+
+                return \yii\helpers\Json::encode(['output' => '', 'message' => 'success ' . $authorized . ' ' . $id]);
+            }
+        }
+    }
     /**
      * Login action.
      *
