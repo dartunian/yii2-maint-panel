@@ -155,7 +155,7 @@ $this->title = 'Users';
 				'hAlign' => 'center',
 				'vAlign' => 'middle',
 				'mergeHeader' => true,
-				'value' => function($data){Yii::$app->formatter->asDate($data->updated_at, 'php:j F Y h:i A');},				
+				'value' => function($data){echo Yii::$app->formatter->asDate($data->updated_at, 'php:j F Y h:i A');},				
 			],			
 			[
 				'label' => 'Last IP',
