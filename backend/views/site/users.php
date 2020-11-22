@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
 				url:'$url2',
 				data:{status:status, id:id},
 				success:function(data){
-					alert('success');
+					//alert('success');
 				}
 			});
 		}
