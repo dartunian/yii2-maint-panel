@@ -106,7 +106,6 @@ $this->title = 'Users';
 					'mergeHeader' => true,
 					'format' => 'raw',
 					'value' => $model->status != 0
-					}
 				],
 				[
 					'label' => 'Locale',
