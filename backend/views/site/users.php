@@ -149,21 +149,21 @@ $this->title = 'Users';
 				'mergeHeader' => true,
 			],		
 			[
-				'class' => 'kartik\grid\BooleanColumn',
-				'label' => 'Active',
-				'hAlign' => 'center',
-				'vAlign' => 'middle',
-				'mergeHeader' => true,
-				'format' => 'raw',
-				'value' => function($data){$data->status != 0;}
-			],
-			[
 				'label' => 'Locale',
 				'attribute' => 'g_locale',
 				'hAlign' => 'center',
 				'vAlign' => 'middle',
 				'mergeHeader' => true,
-			],				
+			],
+			[
+				'class' => 'kartik\grid\BooleanColumn',
+				'label' => 'Deleted',
+				'hAlign' => 'center',
+				'vAlign' => 'middle',
+				'mergeHeader' => true,
+				'format' => 'raw',
+				'value' => function($data){if($data->status == 0){return true;}else{return false;};}
+			],			
 			[
 				//'class' => 'kartik\grid\EditableColumn',
 				'label' => 'Authorized',
