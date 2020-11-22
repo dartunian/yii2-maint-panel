@@ -91,12 +91,14 @@ $this->title = 'Users';
 				'value' => function($data){
 					return ("<img src='" . $data->g_picture . "' style='max-width:30px;' class='img-thumbnail'>");
 				}
+				'mergeHeader' => true,				
 			],
 			[
 				'label' => 'Name',
 				'hAlign' => 'center',
 				'vAlign' => 'middle',
 				'attribute' => 'g_name',
+				'mergeHeader' => true,
 			],
 			[
 				'class' => 'kartik\grid\BooleanColumn',
