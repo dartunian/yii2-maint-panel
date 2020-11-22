@@ -22,46 +22,25 @@ $this->title = 'Users';
 			$gridColumns = [
 				['class' => 'kartik\grid\CheckboxColumn']
 			];
-			echo GridView::widget([
-				'id' => 'kv-grid-demo',
+			GridView::widget([
+			
 				'dataProvider' => $dataProvider,
-				//'filterModel' => $searchModel,
-				'columns' => $gridColumns, // check the configuration for grid columns by clicking button above
-				'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
-				'headerRowOptions' => ['class' => 'kartik-sheet-style'],
-				'filterRowOptions' => ['class' => 'kartik-sheet-style'],
-				'pjax' => true, // pjax is set to always true for this demo
-				// set your toolbar
-				/*				
-				'toolbar' =>  [
-					['content' => 
-						Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => Yii::t('kvgrid', 'Add Book'), 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
-						Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['grid-demo'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
-					],
-					'{export}',
-					'{toggleData}',
-				],
-				// set export properties
-
-				'export' => [
-					'fontAwesome' => true
-				],
-				// parameters from the demo form
-
-				'bordered' => $bordered,
-				'striped' => $striped,
-				'condensed' => $condensed,
-				'responsive' => $responsive,
-				'hover' => $hover,
-				'showPageSummary' => $pageSummary,
-				*/
-				'panel' => [
-					'type' => GridView::TYPE_PRIMARY,
-					'heading' => $this->title,
-				],
-				'persistResize' => false,
-				'toggleDataOptions' => ['minCount' => 10]
-				//'exportConfig' => $exportConfig,
+				'filterModel' => $searchModel,
+				'class' => 'kartik\grid\EditableColumn',
+				'responsive'=> true,
+				'hover'=> true,
+				'pjax'=> true,
+				'tableOptions'=>['class'=>'table table-bordered table-striped dataTable table-hover'],
+				'summaryOptions' => ['class' =>'dataTables_info'],
+				'layout'=>"{items}\n<div class='row' style='margin:0.1%'>
+									 <div class='col-sm-5'>
+										{summary}
+									 </div>
+									 <div class='col-sm-7'>
+										<div class='dataTables_paginate paging_simple_numbers'>{pager}</div>
+									 </div>
+									 </div>",
+				'columns' => $gridColumns,
 			]);
 			?>
         </div>
