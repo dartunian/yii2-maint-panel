@@ -12,6 +12,7 @@ use yii\authclient\clients\Google;
 
 use common\models\User;
 use common\models\LoginForm;
+use common\widgets\Alert;
 
 /**
  * Site controller
@@ -188,9 +189,16 @@ class SiteController extends Controller
                 $findUser->g_locale = ArrayHelper::getValue($userAttributes, 'locale');                
                 $findUser->save();
                 
-                Yii::$app->user->login($findUser);
+                if($findUser->status==10){
+                    Yii::$app->session->setFlash('success', 'You have successfully logged in.');
+                    Yii::$app->user->login($findUser);
+                }
+                else
+                {
+                    Yii::$app->session->setFlash('error', 'Your account has not been authorized.');
+                }
                 
-                $this->redirect(['site/index']);
+                $this->redirect(['site/login']);
             }
             else
             {
@@ -210,9 +218,9 @@ class SiteController extends Controller
                 $registerUser->g_locale = ArrayHelper::getValue($userAttributes, 'locale');
                 $registerUser->save();
                 
-                Yii::$app->user->login($registerUser);
-        
-                $this->redirect(['site/index']);
+                Yii::$app->session->setFlash('error', 'Your account has not been authorized.');
+                
+                $this->redirect(['site/login']);
             }
         }
         else
