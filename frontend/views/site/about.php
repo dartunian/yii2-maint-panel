@@ -23,7 +23,7 @@ echo FormGrid::widget([
         [
             'contentBefore'=>'<legend class="text-info"><small>Account Info</small></legend>',
             'attributes'=>[       // 2 column layout
-                'username'=>['type'=>Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter username...']],
+                'username'=>['label'=>'Username','type'=>Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter username...']],
                 'password'=>['type'=>Form::INPUT_PASSWORD, 'options'=>['placeholder'=>'Enter password...']],
             ]
         ],
