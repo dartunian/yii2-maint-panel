@@ -10,9 +10,9 @@ use kartik\builder\FormGrid;
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 $requestArray = [
-    [1 => 'Test1'],
-    [2 => 'Test2']
-                 ];
+    1 => 'Test1',
+    2 => 'Test2'
+];
 $form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]);
 ?>
 <div class="well">
@@ -27,7 +27,7 @@ echo FormGrid::widget([
             'contentBefore' => '<legend class="text-info"><small>New Maintenance Request</small></legend>',
             'attributes' => [       // 2 column layout
                 'username' => ['label' => 'Name', 'type' => Form::INPUT_TEXT, 'options' => ['placeholder' => 'Enter name...']],
-                'type' => ['label' => 'Request type', 'type' => Form::INPUT_DROPDOWN_LIST, 'items' => [$requestArray], 'hint' => 'Select a request type...'],                
+                'type' => ['label' => 'Type', 'type' => Form::INPUT_DROPDOWN_LIST, 'items' => [$requestArray], 'hint' => 'Select a request type...'],                
             ]
         ],
         [
