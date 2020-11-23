@@ -46,13 +46,13 @@ echo FormGrid::widget([
                 'resetAction' => [    // embed raw HTML content
                     'type' => Form::INPUT_RAW, 
                     'value' => '<div style="text-align: left; margin-top: 20px">' . 
-                        Html::resetButton('Reset', ['class' => 'btn btn-default']) . ' ' .
+                        Html::resetButton('Reset', ['class' => 'btn btn-default', 'style' => 'width: 100%;']) . ' ' .
                         '</div>'
                 ],                             
                 'submitAction' => [    // embed raw HTML content
                     'type' => Form::INPUT_RAW, 
                     'value' => '<div style="text-align: right; margin-top: 20px">' . 
-                        Html::submitButton('Submit', ['class' => 'btn btn-primary', 'style' => 'width: 50%;']) . 
+                        Html::submitButton('Submit', ['class' => 'btn btn-primary', 'style' => 'width: 100%;']) . 
                         '</div>'
                 ],
             ],
