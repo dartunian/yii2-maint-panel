@@ -35,6 +35,7 @@ echo FormGrid::widget([
                     'options' => [
                         'placeholder' => 'Enter additional information...',
                         'style' => 'resize: none;',
+                        'rows' => '5',
                         'maxlength' => '255'
                     ]
                 ],
