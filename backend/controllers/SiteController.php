@@ -111,20 +111,18 @@ class SiteController extends Controller
                 if($find->status==10)
                 {
                     $find->status = 9;
-                    $find->save();                                        
                 }
                 elseif($find->status==9)
                 {
-                    $find->status = 10;
-                    $find->save();                    
+                    $find->status = 10;                  
                 }
                 elseif($find->status==0)
                 {
                     throw new NotSupportedException('User account has been deleted.');
                 }
                 
+                $find->save();
                 
-
                 return \yii\helpers\Json::encode(['output' => '', 'message' => 'success ' . $authorized . ' ' . $id]);
             }
         }
