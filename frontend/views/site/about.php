@@ -12,7 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
 $form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]);
 ?>
-<div class="well">
+<div class="panel panel-default">
+    <div class="panel-heading">New Maintenance Request</div>
+    <div class="panel-body">
 <?php
 echo FormGrid::widget([
     //'model'=>$model,
@@ -35,6 +37,7 @@ echo FormGrid::widget([
     ]
 ]);
 ?>
+    </div>
 </div>
 <?php
 ActiveForm::end();
