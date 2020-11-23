@@ -20,12 +20,11 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<?= Alert::widget() ?>
 <body class="blank">
 <?php $this->beginBody() ?>
 
 <div class="container">
-
+<?= Alert::widget() ?>
     <div class="wrap">
         <?= $content ?>
     </div>
