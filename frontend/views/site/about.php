@@ -42,13 +42,7 @@ echo FormGrid::widget([
             ],
         ],
         [
-            'attributes' => [       // 3 column layout
-                'resetAction' => [    // embed raw HTML content
-                    'type' => Form::INPUT_RAW, 
-                    'value' => '<div style="text-align: left; margin-top: 20px">' . 
-                        Html::resetButton('Reset', ['class' => 'btn btn-default', 'style' => 'width: 100%;']) . ' ' .
-                        '</div>'
-                ],                             
+            'attributes' => [       // 3 column layout                        
                 'submitAction' => [    // embed raw HTML content
                     'type' => Form::INPUT_RAW, 
                     'value' => '<div style="text-align: right; margin-top: 20px">' . 
