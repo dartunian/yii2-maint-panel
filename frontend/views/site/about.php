@@ -15,7 +15,7 @@ $form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]);
 <div class="well">
 <?php
 echo FormGrid::widget([
-    //'model'=>$model,
+    //'model' => $model,
     'formName' => 'requestForm',
     'form' => $form,
     'autoGenerateColumns' => true,
@@ -29,7 +29,15 @@ echo FormGrid::widget([
         ],
         [
             'attributes' => [
-                'notes' => ['label' => 'Additional information', 'type' => Form::INPUT_TEXTAREA, 'options' => ['placeholder' => 'Enter additional information...']],
+                'notes' => [
+                    'label' => 'Additional information',
+                    'type' => Form::INPUT_TEXTAREA,
+                    'options' => [
+                        'placeholder' => 'Enter additional information...',
+                        'style' => 'resize: none;',
+                        'maxlength' => '255'
+                    ]
+                ],
             ],
         ],
     ]
