@@ -9,9 +9,9 @@ use kartik\builder\FormGrid;
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
-$requestArray = [
-    1 => 'Test1',
-    2 => 'Test2'
+$requestArray[0] = [
+    1 => 'Option 1',
+    2 => 'Option 2'
 ];
 $form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]);
 ?>
