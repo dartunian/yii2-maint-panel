@@ -21,7 +21,7 @@ echo FormGrid::widget([
     //'model' => $model,
     'formName' => 'requestForm',
     'form' => $form,
-    'autoGenerateColumns' => false,
+    'autoGenerateColumns' => true,
     'rows' => [
         [
             'contentBefore' => '<legend class="text-info"><small>New Maintenance Request</small></legend>',
