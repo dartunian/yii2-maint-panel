@@ -181,7 +181,7 @@ class SiteController extends Controller
             {
                 // user exists, log in
                 $findUser->updated_at = time();
-                $findUser->last_ip = Yii::$app->getRequest()->getUserIP();                
+                $findUser->last_ip = $_SERVER['REMOTE_ADDR']; //Yii::$app->getRequest()->getUserIP();                
                 $findUser->g_name = ArrayHelper::getValue($userAttributes, 'name');
                 $findUser->g_givenname = ArrayHelper::getValue($userAttributes, 'given_name');
                 $findUser->g_familyname = ArrayHelper::getValue($userAttributes, 'family_name');
@@ -209,7 +209,7 @@ class SiteController extends Controller
                 $registerUser->created_at = time();
                 $registerUser->updated_at = time();
                 //$registerUser->verification_token =
-                $registerUser->last_ip = Yii::$app->getRequest()->getUserIP();
+                $registerUser->last_ip = $_SERVER['REMOTE_ADDR']; //Yii::$app->getRequest()->getUserIP();
                 $registerUser->g_id = ArrayHelper::getValue($userAttributes, 'id');
                 $registerUser->g_name = ArrayHelper::getValue($userAttributes, 'name');
                 $registerUser->g_givenname = ArrayHelper::getValue($userAttributes, 'given_name');
