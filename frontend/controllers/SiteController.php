@@ -149,7 +149,15 @@ class SiteController extends Controller
      */
     public function actionNewRequest()
     {
-        return $this->render('newrequest');
+        if(Yii::$app->request->post())
+        {
+            Yii::$app->session->setFlash('info', 'post request');            
+            return $this->render('newrequest');            
+        }
+        else
+        {
+            return $this->render('newrequest');
+        }
     }
 
     /**
