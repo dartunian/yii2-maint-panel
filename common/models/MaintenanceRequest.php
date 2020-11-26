@@ -8,10 +8,9 @@ class MaintenanceRequest extends ActiveRecord
     public function rules()
     {
         return [
-            // the name, email, subject and body attributes are required
-            'name' => [['name'], 'required', 'string', 'max' => 50],
-            'type' => [['type'], 'required'],
-            'notes' => [['notes'], 'required', 'string', 'max' => 255],
+            [['name', 'type', 'notes'], 'required'],
+            [['name'], 'string', 'max' => 50],
+            [['notes'], 'string', 'min' => 25, 'max' => 255],
         ];
     }
     /**
