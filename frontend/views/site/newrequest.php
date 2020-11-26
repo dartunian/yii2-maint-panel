@@ -13,51 +13,20 @@ $requestArray = [
     1 => 'Repair',
     2 => 'Other'
 ];
-$form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]);
 ?>
 <div class="well">
-<?php
-echo FormGrid::widget([
-    'model' => $model,
-    'form' => $form,
-    'autoGenerateColumns' => true,
-    'rows' => [
-        [
-            'contentBefore' => '<legend class="text-info"><small>Maintenance Request Form</small></legend>',
-            'attributes' => [       // 2 column layout
-                'name' => ['label' => '<div style="margin-top: 5px;">Name</div>', 'type' => Form::INPUT_TEXT, 'options' => ['placeholder' => 'Enter name...', 'autocomplete' => 'off']],
-                'type' => ['label' => '<div style="margin-top: 5px;">Type</div>', 'type' => Form::INPUT_DROPDOWN_LIST, 'items' => $requestArray, 'hint' => 'Select a request type...', 'options' => ['autocomplete' => 'off']],                
-            ]
-        ],
-        [
-            'attributes' => [
-                'notes' => [
-                    'label' => '<div style="margin-top: 5px;">Additional information</div>',
-                    'type' => Form::INPUT_TEXTAREA,
-                    'options' => [
-                        'placeholder' => 'Enter additional information...',
-                        'style' => 'resize: none;',
-                        'rows' => '4',
-                        'maxlength' => '255',
-                        'autocomplete' => 'off',
-                    ]
-                ],
-            ],
-        ],
-        [
-            'attributes' => [       // 3 column layout                        
-                'submitAction' => [    // embed raw HTML content
-                    'type' => Form::INPUT_RAW, 
-                    'value' => '<div style="text-align: right; margin-top: 20px">' . 
-                        Html::submitButton('Submit', ['class' => 'btn btn-primary', 'style' => 'width: 100%;']) . 
-                        '</div>'
-                ],
-            ],
-        ],        
-    ]
-]);
-?>
+    <?php
+        $form = ActiveForm::begin([
+            'id' => 'login-form-vertical', 
+            'type' => ActiveForm::TYPE_VERTICAL
+        ]); 
+    ?>
+        <?= $form->field($model, 'username') ?>
+        <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'rememberMe')->checkbox(['id' => 'remember-me-ver']) ?>
+        <div class="form-group">
+            <?= Html::submitButton('Login', ['class' => 'btn btn-primary']) ?>
+            <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+        </div>
+    <?php ActiveForm::end(); ?>
 </div>
-<?php
-ActiveForm::end();
-?>
