@@ -18,9 +18,7 @@ $form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]);
 <div class="well">
 <?php
 echo FormGrid::widget([
-    //'model' => $model,
-    'formConfig' => ['showErrors' => true],
-    'formName' => 'requestForm',
+    'model' => $model,
     'form' => $form,
     'autoGenerateColumns' => true,
     'rows' => [
