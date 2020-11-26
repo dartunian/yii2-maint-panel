@@ -133,17 +133,9 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
-    }
-    public function getFormAttribs() {
-        return [
-            'username'=>['type'=>Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter username...']],
-            'password'=>['type'=>Form::INPUT_PASSWORD, 'options'=>['placeholder'=>'Enter password...']],
-            'rememberMe'=>['type'=>Form::INPUT_CHECKBOX],
-            'actions'=>['type'=>Form::INPUT_RAW, 'value'=>Html::submitButton('Submit', ['class'=>'btn btn-primary'])],
-        ];
     }   
     /**
-     * Displays about page.
+     * Displays new request page.
      *
      * @return mixed
      */
