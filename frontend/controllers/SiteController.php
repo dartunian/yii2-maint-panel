@@ -134,15 +134,22 @@ class SiteController extends Controller
             ]);
         }
     }
-
+    public function getFormAttribs() {
+        return [
+            'username'=>['type'=>Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter username...']],
+            'password'=>['type'=>Form::INPUT_PASSWORD, 'options'=>['placeholder'=>'Enter password...']],
+            'rememberMe'=>['type'=>Form::INPUT_CHECKBOX],
+            'actions'=>['type'=>Form::INPUT_RAW, 'value'=>Html::submitButton('Submit', ['class'=>'btn btn-primary'])];
+        ];
+    }   
     /**
      * Displays about page.
      *
      * @return mixed
      */
-    public function actionAbout()
+    public function actionNewRequest()
     {
-        return $this->render('about');
+        return $this->render('newrequest');
     }
 
     /**
