@@ -4,7 +4,7 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class Requests extends ActiveRecord
+class MaintenanceRequest extends ActiveRecord
 {    
     /**
      * @return string the name of the table associated with this ActiveRecord class.
