@@ -157,7 +157,7 @@ class SiteController extends Controller
             }
             */
             Yii::$app->session->setFlash('info', 'post request validated');
-            return $this->refresh();            
+            $this->refresh();            
             //$this->redirect(['site/newrequest']);
             //return $this->render('newrequest');            
         }
@@ -165,7 +165,8 @@ class SiteController extends Controller
         {
             return $this->render('newrequest', [
                 'model' => $model,
-            ]);        }
+            ]);
+        }
     }
 
     /**
