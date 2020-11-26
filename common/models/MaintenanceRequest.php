@@ -9,7 +9,9 @@ class MaintenanceRequest extends ActiveRecord
     {
         return [
             // the name, email, subject and body attributes are required
-            [['name', 'type', 'notes'], 'required'],
+            'name' => [['name', 'required'], 'string', 'max' => 50],
+            'type' => [['type', 'required']],
+            'notes' => [['notes', 'required'], 'string', 'max' => 255]
         ];
     }
     /**
