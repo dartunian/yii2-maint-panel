@@ -143,7 +143,7 @@ class SiteController extends Controller
      */
     public function actionNewRequest()
     {
-        $model = new Requests();
+        $model = new MaintenanceRequest();
         if ($model->load(Yii::$app->request->post()) && $model->validate())
         {
             /*
