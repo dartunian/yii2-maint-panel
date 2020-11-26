@@ -144,7 +144,7 @@ class SiteController extends Controller
     public function actionNewRequest()
     {
         $model = new Requests();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate())
         {
             /*
             if($model->save())
@@ -157,7 +157,7 @@ class SiteController extends Controller
             }
             */
             Yii::$app->session->setFlash('info', 'post request validated');
-            $this->refresh();            
+            return $this->refresh();            
             //$this->redirect(['site/newrequest']);
             //return $this->render('newrequest');            
         }
