@@ -17,7 +17,6 @@ $form = ActiveForm::begin([
     'id' => 'maint-form-inline', 
     'type' => ActiveForm::TYPE_INLINE,
     'tooltipStyleFeedback' => true, // shows tooltip styled validation error feedback
-    'fieldConfig' => ['options' => ['class' => 'form-group mr-2']], // spacing field groups
     'formConfig' => ['showErrors' => true],
     'options' => ['style' => 'align-items: flex-start'] // set style for proper tooltips error display
 ]);
