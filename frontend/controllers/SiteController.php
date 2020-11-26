@@ -10,6 +10,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\Requests;
+
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -141,15 +143,29 @@ class SiteController extends Controller
      */
     public function actionNewRequest()
     {
-        if(Yii::$app->request->post())
+        $model = new Requests();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
         {
-            Yii::$app->session->setFlash('info', 'post request');            
-            return $this->render('newrequest');            
+            /*
+            if($model->save())
+            {
+                
+            }
+            else
+            {
+                
+            }
+            */
+            Yii::$app->session->setFlash('info', 'post request validated');
+            return $this->refresh();            
+            //$this->redirect(['site/newrequest']);
+            //return $this->render('newrequest');            
         }
         else
         {
-            return $this->render('newrequest');
-        }
+            return $this->render('newrequest', [
+                'model' => $model,
+            ]);        }
     }
 
     /**
