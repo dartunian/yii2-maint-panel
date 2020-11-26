@@ -146,16 +146,14 @@ class SiteController extends Controller
         $model = new MaintenanceRequest();
         if ($model->load(Yii::$app->request->post()) && $model->validate())
         {
-            /*
             if($model->save())
             {
-                
+                Yii::$app->session->setFlash('success', 'post request validated');
             }
             else
             {
-                
+                Yii::$app->session->setFlash('error', 'post request validated');
             }
-            */
             Yii::$app->session->setFlash('info', 'post request validated');
             return $this->refresh();            
             //$this->redirect(['site/newrequest']);
