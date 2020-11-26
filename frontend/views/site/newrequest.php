@@ -32,7 +32,6 @@ echo FormGrid::widget([
         [
             'attributes' => [
                 'notes' => [
-                    'label' => 'Additional information',
                     'type' => Form::INPUT_TEXTAREA,
                     'options' => [
                         'placeholder' => 'Enter additional information...',
