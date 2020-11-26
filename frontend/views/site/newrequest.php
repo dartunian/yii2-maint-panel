@@ -13,13 +13,7 @@ $requestArray = [
     1 => 'Repair',
     2 => 'Other'
 ];
-$form = ActiveForm::begin([
-    'id' => 'maint-form-inline', 
-    'type' => ActiveForm::TYPE_INLINE,
-    'tooltipStyleFeedback' => true, // shows tooltip styled validation error feedback
-    'formConfig' => ['showErrors' => true],
-    'options' => ['style' => 'align-items: flex-start'] // set style for proper tooltips error display
-]);
+$form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]);
 ?>
 <div class="well">
 <?php
