@@ -25,14 +25,14 @@ echo FormGrid::widget([
         [
             'contentBefore' => '<legend class="text-info"><small>Maintenance Request Form</small></legend>',
             'attributes' => [       // 2 column layout
-                'name' => ['label' => '<div style="margin-top: 5px;">Name</div>', 'type' => Form::INPUT_TEXT, 'options' => ['placeholder' => 'Enter name...', 'autocomplete' => 'off', 'maxlength' => '50']],
-                'type' => ['label' => '<div style="margin-top: 5px;">Type</div>', 'type' => Form::INPUT_DROPDOWN_LIST, 'items' => $requestArray, 'options' => ['autocomplete' => 'off']],                
+                'name' => ['label' => 'Name', 'type' => Form::INPUT_TEXT, 'options' => ['placeholder' => 'Enter name...', 'autocomplete' => 'off', 'maxlength' => '50']],
+                'type' => ['label' => 'Type', 'type' => Form::INPUT_DROPDOWN_LIST, 'items' => $requestArray, 'options' => ['autocomplete' => 'off']],                
             ]
         ],
         [
             'attributes' => [
                 'notes' => [
-                    'label' => '<div style="">Additional information</div>',
+                    'label' => 'Additional information',
                     'type' => Form::INPUT_TEXTAREA,
                     'options' => [
                         'placeholder' => 'Enter additional information...',
