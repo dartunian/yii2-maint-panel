@@ -24,7 +24,7 @@ echo FormGrid::widget([
     'autoGenerateColumns' => true,
     'rows' => [
         [
-            'contentBefore' => '<legend class="text-info"><small>New Maintenance Request</small></legend>',
+            'contentBefore' => '<legend class="text-info"><small>Maintenance Request Form</small></legend>',
             'attributes' => [       // 2 column layout
                 'username' => ['label' => '<div style="margin-top: 5px;">Name</div>', 'type' => Form::INPUT_TEXT, 'options' => ['placeholder' => 'Enter name...']],
                 'type' => ['label' => '<div style="margin-top: 5px;">Type</div>', 'type' => Form::INPUT_DROPDOWN_LIST, 'items' => $requestArray, 'hint' => 'Select a request type...'],                
