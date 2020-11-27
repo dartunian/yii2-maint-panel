@@ -38,6 +38,7 @@ $this->title = 'Maintenance Panel';
         'hover' => true,
         'condensed' => true,
         'responsive' => true,
+        'responsiveWrap' => true,
         //'floatHeader'=>true,
         //'floatHeaderOptions'=>['top'=>'50'],
         'panel' => [
