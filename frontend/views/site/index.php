@@ -81,7 +81,8 @@ $this->title = 'Maintenance Panel';
             'hAlign' => 'center',
             'vAlign' => 'middle',
             'mergeHeader' => true,
-            'value' => function($data){return "<div style='word-wrap: break-word;'>".$data->notes."</div>";},
+            'options' => ['style' => 'word-wrap: break-word;'],
+            'value' => function($data){return $data->notes;},
         ],
         [
             'label' => 'Status',
