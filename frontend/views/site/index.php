@@ -44,7 +44,7 @@ $this->title = 'Maintenance Panel';
         //'floatHeaderOptions'=>['top'=>'50'],
         'panel' => [
             'type' => GridView::TYPE_DEFAULT,
-            'heading' => '<span class="glyphicon glyphicon-wrench"></span> Maintenance Requests',
+            'heading' => '<span class="glyphicon glyphicon-wrench"></span>',
             'before' => false,
             'after' => false,
         ],
