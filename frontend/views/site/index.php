@@ -106,8 +106,12 @@ $this->title = 'Maintenance Panel';
                 }
                 elseif($data->status == 2)
                 {
+                    return 'Request';
+                }
+                elseif($data->status == 3)
+                {
                     return 'Other';
-                }            
+                }                     
             },              
         ],
         [
