@@ -80,8 +80,8 @@ $this->title = 'Maintenance Panel';
             'label' => 'Notes',
             'hAlign' => 'center',
             'vAlign' => 'middle',
-            'attribute' => 'notes',
             'mergeHeader' => true,
+            'value' => function($data){return wordwrap($data->notes, 25, "\n", true);},
         ],
         [
             'label' => 'Status',
