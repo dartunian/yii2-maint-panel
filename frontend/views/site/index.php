@@ -84,7 +84,7 @@ $this->title = 'Maintenance Panel';
             'vAlign' => 'middle',
             'mergeHeader' => true,
             'contentOptions' => [
-                'style'=>'max-width: 200px; overflow: auto; white-space: normal; word-wrap: break-word;'
+                'style'=>'overflow: auto; white-space: normal; word-wrap: break-word;'
             ],
             'value' => function($data){return $data->notes;},
         ],
