@@ -111,8 +111,22 @@ $this->title = 'Maintenance Panel';
             'label' => 'Status',
             'hAlign' => 'center',
             'vAlign' => 'middle',
-            'attribute' => 'status',
             'mergeHeader' => true,
+            'value' => function($data)
+            {
+                if($data->status == 0)
+                {
+                    return 'Created';
+                }
+                elseif($data->status == 1)
+                {
+                    return 'In Progress';
+                }
+                elseif($data->status == 2)
+                {
+                    return 'Complete';
+                }                  
+            },            
         ],	                
         [
             'label' => 'Created',
