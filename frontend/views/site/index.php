@@ -69,8 +69,8 @@ $this->title = 'Maintenance Panel';
             'label' => 'Name',
             'hAlign' => 'center',
             'vAlign' => 'middle',
-            'attribute' => 'name',
             'mergeHeader' => true,
+            'value' => function($data){return StringHelper::truncate($data->name, 25);},            
         ],			
         [
             'label' => 'Type',
@@ -84,9 +84,6 @@ $this->title = 'Maintenance Panel';
             'hAlign' => 'center',
             'vAlign' => 'middle',
             'mergeHeader' => true,
-            'contentOptions' => [
-                'style'=>'overflow: auto; white-space: normal; word-wrap: break-word;'
-            ],
             'value' => function($data){return StringHelper::truncate($data->notes, 25);},
         ],
         [
