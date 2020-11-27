@@ -50,7 +50,6 @@ $this->title = 'Maintenance Panel';
         ],
         'panelTemplate' => $panelTemplate,			
         'tableOptions' => ['style' => 'margin:0px;'],
-        'rowOptions' => ['class' => GridView::TYPE_DANGER],
         'columns' => [
         /*[
                 'class' => 'kartik\grid\ExpandRowColumn',
@@ -71,6 +70,7 @@ $this->title = 'Maintenance Panel';
             'hAlign' => 'center',
             'vAlign' => 'middle',
             'attribute' => 'id',
+            'rowOptions' => ['class' => GridView::TYPE_DANGER],            
             'mergeHeader' => true,
         ],        
         [
