@@ -12,7 +12,7 @@ $this->title = 'Maintenance Panel';
     </div>
 </div>
 
-<div class="panel">
+<div class="panel panel-default">
     <?php
         echo GridView::widget([
             'dataProvider'=> $dataProvider,
