@@ -95,7 +95,9 @@ class SiteController extends Controller
     {
         $model = new MaintenanceRequest();
         if ($model->load(Yii::$app->request->post()) && $model->validate())
-        {            
+        {
+            $model->created_at = time();
+            
             if($model->save())
             {
                 Yii::$app->session->setFlash('success', 'Your request was submitted.');
