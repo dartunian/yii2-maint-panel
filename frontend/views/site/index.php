@@ -13,6 +13,7 @@ $panelTemplate = ("
 ");
 
 $this->title = 'Maintenance Panel';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <?php
