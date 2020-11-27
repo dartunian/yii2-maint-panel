@@ -13,13 +13,11 @@ $panelTemplate = ("
 ");
 
 $this->title = 'Maintenance Panel';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-index">
-    <div class="jumbotron">
-        <h1>Davis Maintenance Panel</h1>
-    </div>
+    <h1>Davis Maintenance Panel</h1>
 </div>
+
 <?php
     echo GridView::widget([
         'id' => 'requests_grid',
