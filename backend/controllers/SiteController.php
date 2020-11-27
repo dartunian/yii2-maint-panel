@@ -11,7 +11,6 @@ use yii\data\ActiveDataProvider;
 use yii\authclient\clients\Google;
 
 use common\models\User;
-use common\models\LoginForm;
 use common\widgets\Alert;
 
 /**
