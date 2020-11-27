@@ -97,8 +97,18 @@ $this->title = 'Maintenance Panel';
             'label' => 'Type',
             'hAlign' => 'center',
             'vAlign' => 'middle',
-            'attribute' => 'type',
             'mergeHeader' => true,
+            'value' => function($data)
+            {
+                if($data->type == 1)
+                {
+                    return 'Repair';
+                }
+                elseif($data->status == 2)
+                {
+                    return 'Other';
+                }            
+            },              
         ],
         [
             'label' => 'Notes',
