@@ -15,9 +15,10 @@ $panelTemplate = ("
 $this->title = 'Maintenance Panel';
 ?>
 <div class="site-index">
-    <h1>Davis Maintenance Panel</h1>
+    <div class="jumbotron">
+        <h1>Davis Maintenance Panel</h1>
+    </div>
 </div>
-
 <?php
     echo GridView::widget([
         'id' => 'requests_grid',

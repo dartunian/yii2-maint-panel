@@ -1,6 +1,6 @@
 <?php
 return [
-    'name' => 'Davis Maintenance Panel',
+    'name' => 'DavisHou.se',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
