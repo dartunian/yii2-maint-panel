@@ -33,7 +33,7 @@ $this->title = 'Maintenance Panel';
                     'showNoty' => false
             ],*/
         ],
-        'bordered' => true,
+        'bordered' => false,
         'striped' => false,
         'hover' => true,
         'condensed' => true,
