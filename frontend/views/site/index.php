@@ -81,7 +81,7 @@ $this->title = 'Maintenance Panel';
             'hAlign' => 'center',
             'vAlign' => 'middle',
             'mergeHeader' => true,
-            'options' => ['style' => 'word-wrap: break-word;'],
+            'options' => ['style' => 'overflow: auto; word-wrap: break-word;'],
             'value' => function($data){return $data->notes;},
         ],
         [
