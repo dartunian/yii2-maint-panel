@@ -17,7 +17,7 @@ $this->title = 'Maintenance Panel';
         echo GridView::widget([
             'dataProvider'=> $dataProvider,
             'filterModel' => $searchModel,
-            'columns' => $gridColumns,
+            //'columns' => $gridColumns,
             'responsive'=>true,
             'hover'=>true
         ]);    
