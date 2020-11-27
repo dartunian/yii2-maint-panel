@@ -11,7 +11,7 @@ use yii\data\ActiveDataProvider;
 use yii\authclient\clients\Google;
 
 use common\models\User;
-use common\models\MaintenanceRequest;
+use common\models\LoginForm;
 use common\widgets\Alert;
 
 /**
@@ -67,25 +67,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $query = MaintenanceRequest::find();
-        
-        $searchModel = new MaintenanceRequest();
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'pagination' => [
-                'pageSize' => 10,
-            ],
-        ]);
-
-        if(Yii::$app->request->isAjax)
-        {
-            $dataProvider = $searchModel->search(Yii::$app->request->get());
-        }
-            
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        return $this->render('index');
     }
     public function actionUsers()
     {  

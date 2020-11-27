@@ -65,7 +65,25 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $query = MaintenanceRequest::find();
+        
+        $searchModel = new MaintenanceRequest();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+        ]);
+
+        if(Yii::$app->request->isAjax)
+        {
+            $dataProvider = $searchModel->search(Yii::$app->request->get());
+        }
+            
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
     /**
      * Displays new request page.
