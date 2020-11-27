@@ -17,7 +17,7 @@ $this->title = 'Maintenance Panel';
 ?>
 <div class="site-index">
     <div class="jumbotron">
-        <h1>Davis Maintenance Panel</h1>
+        <h3>Davis Maintenance Panel</h3>
     </div>
 </div>
 <?php
