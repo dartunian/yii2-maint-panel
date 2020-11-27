@@ -104,11 +104,11 @@ $this->title = 'Maintenance Panel';
                 {
                     return 'Repair';
                 }
-                elseif($data->status == 2)
+                elseif($data->type == 2)
                 {
                     return 'Request';
                 }
-                elseif($data->status == 3)
+                elseif($data->type == 3)
                 {
                     return 'Other';
                 }                     
