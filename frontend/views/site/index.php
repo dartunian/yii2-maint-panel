@@ -37,6 +37,7 @@ $this->title = 'Maintenance Panel';
         'striped' => false,
         'hover' => true,
         'condensed' => true,
+        'responsive' => true,
         //'floatHeader'=>true,
         //'floatHeaderOptions'=>['top'=>'50'],
         'panel' => [
@@ -81,7 +82,9 @@ $this->title = 'Maintenance Panel';
             'hAlign' => 'center',
             'vAlign' => 'middle',
             'mergeHeader' => true,
-
+            'contentOptions' => [
+                'style'=>'max-width: 200px; overflow: auto; white-space: normal; word-wrap: break-word;'
+            ],
             'value' => function($data){return $data->notes;},
         ],
         [
