@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 use kartik\grid\GridView;
+use yii\helpers\StringHelper;
 
 $panelTemplate = ("
 <div class='panel-{type}'>
@@ -86,7 +87,7 @@ $this->title = 'Maintenance Panel';
             'contentOptions' => [
                 'style'=>'overflow: auto; white-space: normal; word-wrap: break-word;'
             ],
-            'value' => function($data){return $data->notes;},
+            'value' => function($data){return Yii::$app->truncate($data->notes, 25);},
         ],
         [
             'label' => 'Status',
