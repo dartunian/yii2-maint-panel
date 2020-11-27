@@ -37,7 +37,6 @@ $this->title = 'Maintenance Panel';
         'striped' => false,
         'hover' => true,
         'condensed' => true,
-        'responsive' => true,
         //'floatHeader'=>true,
         //'floatHeaderOptions'=>['top'=>'50'],
         'panel' => [
@@ -82,7 +81,7 @@ $this->title = 'Maintenance Panel';
             'hAlign' => 'center',
             'vAlign' => 'middle',
             'mergeHeader' => true,
-            'value' => function($data){return wordwrap($data->notes, 25, "\n", true);},
+            'value' => function($data){return "<div style='word-wrap: break-word;'>".$data->notes."</div>";},
         ],
         [
             'label' => 'Status',
