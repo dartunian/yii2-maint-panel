@@ -87,7 +87,7 @@ $this->title = 'Maintenance Panel';
             'contentOptions' => [
                 'style'=>'overflow: auto; white-space: normal; word-wrap: break-word;'
             ],
-            'value' => function($data){return Yii::$app->truncate($data->notes, 25);},
+            'value' => function($data){return StringHelper::truncate($data->notes, 25);},
         ],
         [
             'label' => 'Status',
