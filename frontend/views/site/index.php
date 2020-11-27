@@ -62,91 +62,40 @@ $this->title = 'Maintenance Panel';
                         'collapseIcon' => '',
                 ],*/                    
                 [
-                    'format'=>'raw',
-                    'hAlign' => 'center',
-                    'vAlign' => 'middle',				
-                    'mergeHeader' => true,
-                    'value' => function($data){
-                        return ("<img src='" . $data->g_picture . "' style='max-width:30px;' class='img-thumbnail'>");
-                    }
-                ],
-                [
-                    'label' => 'Username',
-                    'hAlign' => 'center',
-                    'vAlign' => 'middle',
-                    'attribute' => 'username',
-                    'mergeHeader' => true,
-                ],			
-                [
                     'label' => 'Name',
                     'hAlign' => 'center',
                     'vAlign' => 'middle',
-                    'attribute' => 'g_name',
+                    'attribute' => 'name',
                     'mergeHeader' => true,
-                ],
-                [
-                    'label' => 'Email',
-                    'hAlign' => 'center',
-                    'vAlign' => 'middle',
-                    'attribute' => 'email',
-                    'mergeHeader' => true,
-                ],
-                [
-                    'label' => 'Last Login',
-                    'hAlign' => 'center',
-                    'vAlign' => 'middle',
-                    'mergeHeader' => true,
-                    'value' => function($data){return Yii::$app->formatter->asDate($data->updated_at, 'php:j F Y h:i A');},				
                 ],			
                 [
-                    'label' => 'Last IP',
+                    'label' => 'Type',
                     'hAlign' => 'center',
                     'vAlign' => 'middle',
-                    'attribute' => 'last_ip',
-                    'mergeHeader' => true,
-                ],		
-                [
-                    'label' => 'Locale',
-                    'attribute' => 'g_locale',
-                    'hAlign' => 'center',
-                    'vAlign' => 'middle',
+                    'attribute' => 'type',
                     'mergeHeader' => true,
                 ],
                 [
-                    'class' => 'kartik\grid\BooleanColumn',
-                    'label' => 'Deleted',
+                    'label' => 'Notes',
                     'hAlign' => 'center',
                     'vAlign' => 'middle',
+                    'attribute' => 'notes',
                     'mergeHeader' => true,
-                    'format' => 'raw',
-                    'value' => function($data){if($data->status == 0){return true;}else{return false;};}
-                ],			
-                [
-                    //'class' => 'kartik\grid\EditableColumn',
-                    'label' => 'Authorized',
-                    'hAlign' => 'center',
-                    'vAlign' => 'middle',
-                    'mergeHeader' => true,
-                    'format' => 'raw',
-                    'value' => function ($model) {
-                        if($model->status==10){$val1=true;}else{$val1=false;}
-                        if($model->status==0){$val2=true;}else{$val2=false;}
-                        return SwitchInput::widget([
-                            'name' => $model->id,
-                            'value' => $val1,
-                            'disabled' => $val2,
-                            'pluginOptions' => [
-                                'size' => 'mini',
-                                'onColor' => 'success', 
-                                'onText' => 'ON',
-                                'offText' => 'OFF',
-                            ],
-                                //'options' => ['id' => $model->id,],
-                                'containerOptions' => ['style' => 'margin: 0px;', 'name' => $model->id,],
-                        ]);
-                    }				
                 ],
-                //
+                [
+                    'label' => 'Status',
+                    'hAlign' => 'center',
+                    'vAlign' => 'middle',
+                    'attribute' => 'status',
+                    'mergeHeader' => true,
+                ],	                
+                [
+                    'label' => 'Created',
+                    'hAlign' => 'center',
+                    'vAlign' => 'middle',
+                    'mergeHeader' => true,
+                    'value' => function($data){return Yii::$app->formatter->asDate($data->created_at, 'php:j F Y h:i A');},				
+                ],				
             ]
         ]);  
         ?>
