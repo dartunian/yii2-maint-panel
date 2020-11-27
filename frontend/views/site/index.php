@@ -13,13 +13,16 @@ $this->title = 'Maintenance Panel';
 </div>
 
 <div class="panel panel-default">
-    <?php
-        echo GridView::widget([
-            'dataProvider'=> $dataProvider,
-            'filterModel' => $searchModel,
-            //'columns' => $gridColumns,
-            'responsive'=>true,
-            'hover'=>true
-        ]);    
-    ?>
+    <div class="panel-heading"></div>
+        <div class="panel-body">
+        <?php
+            echo GridView::widget([
+                'dataProvider'=> $dataProvider,
+                'filterModel' => $searchModel,
+                //'columns' => $gridColumns,
+                'responsive'=>true,
+                'hover'=>true
+            ]);    
+        ?>
+        </div>
 </div>
