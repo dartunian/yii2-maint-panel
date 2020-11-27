@@ -64,7 +64,14 @@ $this->title = 'Maintenance Panel';
                 'expandOneOnly' => true,
                 'expandIcon' => '',
                 'collapseIcon' => '',
-        ],*/                    
+        ],*/
+        [
+            'label' => '#',
+            'hAlign' => 'center',
+            'vAlign' => 'middle',
+            'attribute' => 'id',
+            'mergeHeader' => true,
+        ],        
         [
             'label' => 'Name',
             'hAlign' => 'center',
