@@ -11,7 +11,8 @@ $this->title = 'New Maintenance Request';
 $this->params['breadcrumbs'][] = $this->title;
 $requestArray = [
     1 => 'Repair',
-    2 => 'Other'
+    2 => 'Request',
+    3 => 'Other'
 ];
 $form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]);
 ?>
