@@ -17,7 +17,7 @@ $this->title = 'Maintenance Panel';
 ?>
 <div class="site-index">
     <div class="jumbotron">
-        <h2>Davis Maintenance Panel</h2>
+        <h1>Davis Maintenance Panel</h1>
     </div>
 </div>
 <?php
@@ -115,11 +115,11 @@ $this->title = 'Maintenance Panel';
             },              
         ],
         [
-            'label' => 'Notes',
+            'label' => 'Summary',
             'hAlign' => 'center',
             'vAlign' => 'middle',
             'mergeHeader' => true,
-            'value' => function($data){return StringHelper::truncate($data->notes, 25);},
+            'value' => function($data){return StringHelper::truncate($data->summary, 25);},
         ],
         [
             'label' => 'Status',
