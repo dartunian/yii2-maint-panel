@@ -28,7 +28,7 @@ $this->registerJs($script2, \yii\web\View::POS_READY);
 		<label class="control-label">Summary</label>
 		<div class='panel panel-default'>
 			<div class='panel-body'>
-				<span style="display:inline-block; word-break:break-word;"><?= $model->summary ?></span>
+				<span style="display:inline-block;word-break:break-all;width:100px;"><?= $model->summary ?></span>
 			</div>
 		</div>
 	</div>
