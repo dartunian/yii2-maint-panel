@@ -62,20 +62,20 @@ $this->title = 'Maintenance Panel';
                 }
         },
         'columns' => [
-        /*[
-                'class' => 'kartik\grid\ExpandRowColumn',
-                'width' => '50px',
-                'value' => function ($model, $key, $index, $column) {
-                    return GridView::ROW_COLLAPSED;
-                 },
-                'detail' => function ($model, $key, $index, $column) {
-                    return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model]);
-                 },
-                'headerOptions' => ['class' => 'kartik-sheet-style'],
-                'expandOneOnly' => true,
-                'expandIcon' => '',
-                'collapseIcon' => '',
-        ],*/
+        [
+            'class' => 'kartik\grid\ExpandRowColumn',
+            'width' => '50px',
+            'value' => function ($model, $key, $index, $column) {
+                return GridView::ROW_COLLAPSED;
+             },
+            'detail' => function ($model, $key, $index, $column) {
+                return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model]);
+             },
+            'headerOptions' => ['class' => 'kartik-sheet-style'],
+            'expandOneOnly' => true,
+            'expandIcon' => '',
+            'collapseIcon' => '',
+        ],
         [
             'label' => '#',
             'hAlign' => 'center',
