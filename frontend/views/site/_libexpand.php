@@ -24,10 +24,14 @@ $this->registerJs($script2, \yii\web\View::POS_READY);
 */
 ?>
 <div class="wrap">
-	<label class="control-label">Summary</label>
-	<div class='panel panel-default'>
-		<div class='panel-body'>
-			<?= $model->summary ?>
+	<div class="col-md-4">
+		<label class="control-label">Summary</label>
+		<div class='panel panel-default'>
+			<div class='panel-body'>
+				<?= $model->summary ?>
+			</div>
 		</div>
 	</div>
+	<div class="col-md-4"></div>
+	<div class="col-md-4"></div>	
 </div>
