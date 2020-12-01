@@ -23,11 +23,15 @@ JS;
 $this->registerJs($script2, \yii\web\View::POS_READY);
 */
 ?>
-<div class="wrap" style="word-wrap: break-word; overflow: auto;">
-	<label class="control-label">Summary</label>
-	<div class='panel panel-default'>
-		<div class='panel-body'>
-			<span style="word-wrap: break-word; overflow: auto;"><?= $model->summary ?></span>
+<div class="wrap">
+	<div class="col-md-4">
+		<label class="control-label">Summary</label>
+		<div class='panel panel-default'>
+			<div class='panel-body'>
+				<span style="display:block; word-wrap:break-word;"><?= $model->summary ?></span>
+			</div>
 		</div>
 	</div>
+	<div class="col-md-4"></div>
+	<div class="col-md-4"></div>	
 </div>
