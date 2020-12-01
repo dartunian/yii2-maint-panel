@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 use kartik\grid\GridView;
 use yii\helpers\StringHelper;
+use yii\helpers\Html;
 
 $panelTemplate = ("
 <div class='panel-{type}'>
@@ -53,17 +54,14 @@ $this->title = 'Maintenance Panel';
         'rowOptions' => function($data){
                 if($data->status == 0)
                 {
-                    $labelBegin = "<span class='label label-info'>";
                     return ['class' => GridView::TYPE_INFO];
                 }
                 elseif($data->status == 1)
                 {
-                    $labelBegin = "<span class='label label-warning'>";
                     return ['class' => GridView::TYPE_WARNING];
                 }
                 elseif($data->status == 2)
                 {
-                    $labelBegin = "<span class='label label-success'>";
                     return ['class' => GridView::TYPE_SUCCESS];
                 }
         },
@@ -91,15 +89,15 @@ $this->title = 'Maintenance Panel';
             'value' => function($data){
                 if($data->status == 0)
                 {
-                    return "<span class='label label-info'>".$data->id."</span>";
+                    return Html::encode("<span class='label label-info'>".$data->id."</span>");
                 }
                 elseif($data->status == 1)
                 {
-                    return "<span class='label label-warning'>".$data->id."</span>";
+                    return Html::encode("<span class='label label-warning'>".$data->id."</span>");
                 }
                 elseif($data->status == 2)
                 {
-                    return "<span class='label label-success'>".$data->id."</span>";
+                    return Html::encode("<span class='label label-success'>".$data->id."</span>");
                 }                
             },
         ],        
