@@ -24,8 +24,5 @@ $this->registerJs($script2, \yii\web\View::POS_READY);
 */
 ?>
 <label class="control-label">Summary</label>
-<div class='panel panel-default'>
-	<div class='panel-body'>
-		<div style="overflow-wrap: break-word;"><?= chunk_split($model->summary, 10, "\n") ?></div>
-	</div>
-</div>
+
+<div style="overflow-wrap: break-word;"><?= chunk_split($model->summary, 10, "\n") ?></div>
