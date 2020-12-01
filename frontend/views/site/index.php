@@ -88,7 +88,7 @@ $this->title = 'Maintenance Panel';
             'vAlign' => 'middle',
             'attribute' => 'id',
             'mergeHeader' => true,
-            'value' => function($data){return $labelBegin.$data->id."</span>"},
+            'value' => function($data){return $labelBegin.$data->id."</span>";},
         ],        
         [
             'label' => 'Name',
