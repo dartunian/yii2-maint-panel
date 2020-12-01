@@ -88,7 +88,20 @@ $this->title = 'Maintenance Panel';
             'vAlign' => 'middle',
             'attribute' => 'id',
             'mergeHeader' => true,
-            'value' => function($data){return $labelBegin.$data->id."</span>";},
+            'value' => function($data){
+                if($data->status == 0)
+                {
+                    return "<span class='label label-info'>".$data->id."</span>";
+                }
+                elseif($data->status == 1)
+                {
+                    return "<span class='label label-warning'>".$data->id."</span>";
+                }
+                elseif($data->status == 2)
+                {
+                    return "<span class='label label-success'>".$data->id."</span>";
+                }                
+            },
         ],        
         [
             'label' => 'Name',
