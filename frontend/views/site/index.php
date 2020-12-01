@@ -53,19 +53,19 @@ $this->title = 'Maintenance Panel';
         'rowOptions' => function($data){
                 if($data->status == 0)
                 {
-                    $labelBegin = "<span class='label label-info'>"
+                    $labelBegin = "<span class='label label-info'>";
                     return ['class' => GridView::TYPE_INFO];
                 }
                 elseif($data->status == 1)
                 {
-                    $labelBegin = "<span class='label label-warning'>"                    
+                    $labelBegin = "<span class='label label-warning'>";
                     return ['class' => GridView::TYPE_WARNING];
                 }
                 elseif($data->status == 2)
-                
-                    $labelBegin = "<span class='label label-success'>"                    
+                {
+                    $labelBegin = "<span class='label label-success'>";
                     return ['class' => GridView::TYPE_SUCCESS];
-                }             
+                }
         },
         'columns' => [
         /*[
