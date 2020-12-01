@@ -23,9 +23,11 @@ JS;
 $this->registerJs($script2, \yii\web\View::POS_READY);
 */
 ?>
-<label class="control-label">Summary</label>
-<div class='panel panel-default'>
-	<div class='panel-body' style='word-wrap:break-word; overflow-wrap: break-word; max-width: 150px;'>
-		<?= $model->summary ?>
+<div class="wrap" style="max-width: 150px; word-break: break-all;">
+	<label class="control-label">Summary</label>
+	<div class='panel panel-default'>
+		<div class='panel-body'>
+			<?= $model->summary ?>
+		</div>
 	</div>
 </div>
