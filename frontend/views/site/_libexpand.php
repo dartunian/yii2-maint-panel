@@ -25,4 +25,4 @@ $this->registerJs($script2, \yii\web\View::POS_READY);
 ?>
 <label class="control-label">Summary</label>
 
-<div style="overflow-wrap: break-word; width: 50%;"><?= $model->summary ?></div>
+<div style="overflow-wrap: break-word; max-width: 200px;"><?= $model->summary ?></div>
