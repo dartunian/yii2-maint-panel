@@ -26,6 +26,6 @@ $this->registerJs($script2, \yii\web\View::POS_READY);
 <label class="control-label">Summary</label>
 <div class='panel panel-default'>
 	<div class='panel-body'>
-		<span style='word-wrap: break-word;'><?= $model->summary ?></span>
+		<span style='overflow: auto; word-wrap: break-word;'><?= $model->summary ?></span>
 	</div>
 </div>
