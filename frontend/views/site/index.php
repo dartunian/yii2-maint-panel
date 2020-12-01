@@ -75,9 +75,6 @@ $this->title = 'Maintenance Panel';
             'expandOneOnly' => true,
             'expandIcon' => '',
             'collapseIcon' => '',
-            'contentOptions' => [
-                'style'=>'max-width:150px; overflow: auto; white-space: normal; word-wrap: break-word;'
-            ],            
         ],
         [
             'label' => '#',
