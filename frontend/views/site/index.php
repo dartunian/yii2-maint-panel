@@ -88,18 +88,17 @@ $this->title = 'Maintenance Panel';
             'mergeHeader' => true,
             'format' => 'html',
             'value' => function($data){
-                $id = $data->id+2000;
                 if($data->status == 0)
                 {
-                    return "<span class='label label-info'>".$id."</span>";
+                    return "<span class='label label-info'>".$data->id."</span>";
                 }
                 elseif($data->status == 1)
                 {
-                    return "<span class='label label-warning'>".$id."</span>";
+                    return "<span class='label label-warning'>".$data->id."</span>";
                 }
                 elseif($data->status == 2)
                 {
-                    return "<span class='label label-success'>".$id."</span>";
+                    return "<span class='label label-success'>".$data->id."</span>";
                 }                
             },
         ],        
