@@ -86,18 +86,19 @@ $this->title = 'Maintenance Panel';
             'vAlign' => 'middle',
             'attribute' => 'id',
             'mergeHeader' => true,
+            'format' => 'html',
             'value' => function($data){
                 if($data->status == 0)
                 {
-                    return Html::encode("<span class='label label-info'>".$data->id."</span>");
+                    return "<span class='label label-info'>".$data->id."</span>";
                 }
                 elseif($data->status == 1)
                 {
-                    return Html::encode("<span class='label label-warning'>".$data->id."</span>");
+                    return "<span class='label label-warning'>".$data->id."</span>";
                 }
                 elseif($data->status == 2)
                 {
-                    return Html::encode("<span class='label label-success'>".$data->id."</span>");
+                    return "<span class='label label-success'>".$data->id."</span>";
                 }                
             },
         ],        
