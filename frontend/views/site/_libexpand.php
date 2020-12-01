@@ -23,7 +23,7 @@ JS;
 $this->registerJs($script2, \yii\web\View::POS_READY);
 */
 ?>
-<div class="wrap" style="max-width: 150px; word-break: break-all;">
+<div class="wrap">
 	<label class="control-label">Summary</label>
 	<div class='panel panel-default'>
 		<div class='panel-body'>
