@@ -71,20 +71,7 @@ $this->title = 'Maintenance Panel';
             'detail' => function ($model, $key, $index, $column) {
                 return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model, 'class' => 'warning']);
              },
-            'detailOptions' => function($data){
-                if($data->status == 0)
-                {
-                    return ['class' => GridView::TYPE_INFO];
-                }
-                elseif($data->status == 1)
-                {
-                    return ['class' => GridView::TYPE_WARNING];
-                }
-                elseif($data->status == 2)
-                {
-                    return ['class' => GridView::TYPE_SUCCESS];
-                }
-        },         
+            'detailRowCssClass' => GridView::TYPE_WARNING,
             'headerOptions' => ['class' => 'kartik-sheet-style'],
             'expandOneOnly' => true,
             'expandIcon' => '',
