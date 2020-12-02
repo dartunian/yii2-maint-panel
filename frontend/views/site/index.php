@@ -84,6 +84,10 @@ $this->title = 'Maintenance Panel';
                 {
                     return GridView::TYPE_SUCCESS
                 }
+                else
+                {
+                    return GridView::TYPE_DANGER
+                }
         },         
             'headerOptions' => ['class' => 'kartik-sheet-style'],
             'expandOneOnly' => true,
