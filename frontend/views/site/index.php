@@ -75,9 +75,7 @@ $this->title = 'Maintenance Panel';
             'expandOneOnly' => true,
             'expandIcon' => '',
             'collapseIcon' => '',
-            'contentOptions' => function ($model, $key, $index, $column) {
-                return ['class' => 'warning'];
-            },
+            'contentOptions' => ['class' => 'warning'],
         ],
         [
             'label' => '#',
