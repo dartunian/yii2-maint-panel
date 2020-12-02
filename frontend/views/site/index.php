@@ -74,21 +74,21 @@ $this->title = 'Maintenance Panel';
             'detailRowCssClass' => function($data){
                 if($data->status == 0)
                 {
-                    return GridView::TYPE_INFO;
+                    echo GridView::TYPE_INFO;
                 }
                 elseif($data->status == 1)
                 {
-                    return GridView::TYPE_WARNING;
+                    echo GridView::TYPE_WARNING;
                 }
                 elseif($data->status == 2)
                 {
-                    return GridView::TYPE_SUCCESS;
+                    echo GridView::TYPE_SUCCESS;
                 }
                 else
                 {
-                    return GridView::TYPE_DANGER;
+                    echo GridView::TYPE_DANGER;
                 }
-        },         
+            },         
             'headerOptions' => ['class' => 'kartik-sheet-style'],
             'expandOneOnly' => true,
             'expandIcon' => '',
