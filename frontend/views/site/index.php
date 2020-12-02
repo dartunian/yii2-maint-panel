@@ -71,22 +71,22 @@ $this->title = 'Maintenance Panel';
             'detail' => function ($model, $key, $index, $column) {
                 return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model, 'class' => 'warning']);
              },
-            'detailRowCssClass' => function($data){
-                if($data->status == 0)
+            'detailRowCssClass' => function($model, $key, $index, $column){
+                if($model->status == 0)
                 {
-                    echo GridView::TYPE_INFO;
+                    return GridView::TYPE_INFO;
                 }
-                elseif($data->status == 1)
+                elseif($model->status == 1)
                 {
-                    echo GridView::TYPE_WARNING;
+                    return TYPE_WARNING;
                 }
-                elseif($data->status == 2)
+                elseif($model->status == 2)
                 {
-                    echo GridView::TYPE_SUCCESS;
+                    return 'success';
                 }
                 else
                 {
-                    echo GridView::TYPE_DANGER;
+                    return GridView::TYPE_DANGER;
                 }
             },         
             'headerOptions' => ['class' => 'kartik-sheet-style'],
