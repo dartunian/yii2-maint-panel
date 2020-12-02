@@ -74,7 +74,7 @@ $this->title = 'Maintenance Panel';
             'detailRowCssClass' => function($data){
                 if($data->status == 0)
                 {
-                    return GridView::TYPE_INFO;
+                    return 'info';
                 }
                 elseif($data->status == 1)
                 {
