@@ -69,9 +69,7 @@ $this->title = 'Maintenance Panel';
                 return GridView::ROW_COLLAPSED;
              },
             'detail' => function ($model, $key, $index, $column) {
-                //return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model]);
-                return "<span'style'='max-width:150px; min-height:100px; 
-                overflow: auto; word-wrap: break-word;'>".$model->summary."</span>";
+                return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model]);
              },
             'headerOptions' => ['class' => 'kartik-sheet-style'],
             'expandOneOnly' => true,
