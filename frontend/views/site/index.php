@@ -71,11 +71,13 @@ $this->title = 'Maintenance Panel';
             'detail' => function ($model, $key, $index, $column) {
                 return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model]);
              },
-            'headerOptions' => ['class' => 'kartik-sheet-style warning'],
+            'headerOptions' => ['class' => 'kartik-sheet-style'],
             'expandOneOnly' => true,
             'expandIcon' => '',
             'collapseIcon' => '',
-            'contentOptions' => ['class' => 'warning'],
+            'contentOptions' => function ($model, $key, $index, $column) {
+                return ['class' => 'warning'];
+            },
         ],
         [
             'label' => '#',
