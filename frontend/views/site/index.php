@@ -82,11 +82,11 @@ $this->title = 'Maintenance Panel';
                 }
                 elseif($data->status == 2)
                 {
-                    return GridView::TYPE_SUCCESS
+                    return GridView::TYPE_SUCCESS;
                 }
                 else
                 {
-                    return GridView::TYPE_DANGER
+                    return GridView::TYPE_DANGER;
                 }
         },         
             'headerOptions' => ['class' => 'kartik-sheet-style'],
