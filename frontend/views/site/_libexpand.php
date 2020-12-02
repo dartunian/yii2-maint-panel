@@ -24,10 +24,8 @@ $this->registerJs($script2, \yii\web\View::POS_READY);
 */
 ?>
 <div class="wrap">
-	<div class='panel panel-default'>
-		<div class='panel-heading'>Summary</div>
-		<div class='panel-body'>
-			<span style="word-break: break-all;"><?= $model->summary ?></span>
-		</div>
+	<label class="control-label">Summary</label>
+	<div class='well'>
+	<span style="word-break: break-all;"><?= $model->summary ?></span>
 	</div>
 </div>
