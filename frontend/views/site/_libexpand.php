@@ -38,15 +38,15 @@ elseif($model->status == 2)
 
 if($model->type == 1)
 {
-	$status = 'Repair';
+	$status = 'Created';
 }
 elseif($model->type == 2)
 {
-	$status = 'Request';
+	$status = 'Complete';
 }
 elseif($model->type == 3)
 {
-	$status = 'Other';
+	$status = 'In Progress';
 }                     
 ?>
 <div class="panel panel-<?= $panelType ?>" style="border:0px;margin:-5px;border-radius:0px;">
