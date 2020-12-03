@@ -71,7 +71,7 @@ $this->title = 'Maintenance Panel';
             'detail' => function ($model, $key, $index, $column) {
                 return Yii::$app->controller->renderPartial('_libexpand', ['model' => $model, 'class' => 'warning']);
              },
-            'detailRowCssClass' => function($data){
+            'detailOptions' => function($data){
                 if($data->status == 0)
                 {
                     return GridView::TYPE_INFO;
