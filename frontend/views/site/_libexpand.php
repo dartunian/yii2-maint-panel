@@ -36,17 +36,17 @@ elseif($model->status == 2)
 	$panelType = 'success';
 }
 
-if($model->type == 1)
+if($model->type == 0)
 {
 	$status = 'Created';
+}
+elseif($model->type == 1)
+{
+	$status = 'In Progress';
 }
 elseif($model->type == 2)
 {
 	$status = 'Complete';
-}
-elseif($model->type == 3)
-{
-	$status = 'In Progress';
 }                     
 ?>
 <div class="panel panel-<?= $panelType ?>" style="border:0px;margin:-5px;border-radius:0px;">
