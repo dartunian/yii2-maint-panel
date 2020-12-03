@@ -78,16 +78,15 @@ $this->title = 'Maintenance Panel';
             'detailRowCssClass' => function($model, $key, $index, $column){
                 if($model->status == 0)
                 {
-                    return GridView::TYPE_INFO;
+                   
                 }
                 elseif($model->status == 1)
                 {
-                    return GridView::TYPE_WARNING;
                 }
                 elseif($model->status == 2)
                 {
-                    return GridView::TYPE_SUCCESS;
                 }
+                return GridView::TYPE_SUCCESS;
             },              
         ],
         [
