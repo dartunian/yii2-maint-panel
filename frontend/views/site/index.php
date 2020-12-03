@@ -128,13 +128,6 @@ $this->title = 'Maintenance Panel';
             },              
         ],
         [
-            'label' => 'Summary',
-            'hAlign' => 'center',
-            'vAlign' => 'middle',
-            'mergeHeader' => true,
-            'value' => function($data){return StringHelper::truncate($data->summary, 25);},
-        ],
-        [
             'label' => 'Status',
             'hAlign' => 'center',
             'vAlign' => 'middle',
