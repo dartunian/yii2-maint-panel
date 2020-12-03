@@ -75,7 +75,7 @@ $this->title = 'Maintenance Panel';
             'expandOneOnly' => true,
             'expandIcon' => '',
             'collapseIcon' => '',
-            'detailRowCssClass' => function($data){return 'info';},
+            'detailRowCssClass' => function($data){return ['class' => 'info'];},
         ],
         [
             'label' => '#',
