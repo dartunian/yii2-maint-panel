@@ -75,17 +75,7 @@ $this->title = 'Maintenance Panel';
             'expandOneOnly' => true,
             'expandIcon' => '',
             'collapseIcon' => '',
-            'detailRowCssClass' => function($model, $key, $index, $column){
-                if($model->status == 0)
-                {
-                }
-                elseif($model->status == 1)
-                {
-                }
-                elseif($model->status == 2)
-                {
-                }
-            },              
+            'detailRowCssClass' => '',
         ],
         [
             'label' => '#',
