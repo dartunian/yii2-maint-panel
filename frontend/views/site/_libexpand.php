@@ -23,7 +23,7 @@ JS;
 $this->registerJs($script2, \yii\web\View::POS_READY);
 */
 ?>
-<div class="wrap">
+<div class="panel panel-success" style="margin:0px;border:0px;">
 	<label class="control-label">Summary</label>
 	<div class='well'>
 	<span style="word-break: break-all;"><?= $model->summary ?></span>
