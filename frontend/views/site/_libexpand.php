@@ -22,10 +22,23 @@ JS;
 
 $this->registerJs($script2, \yii\web\View::POS_READY);
 */
+
+if($model->status == 0)
+{
+	$panelType = 'info';
+}
+elseif($model->status == 1)
+{
+	$panelType = 'warning';
+}
+elseif($model->status == 2)
+{
+	$panelType = 'success';
+}
 ?>
-<div class="panel panel-success" style="margin:0px;border:0px;">
-	<label class="control-label">Summary</label>
-	<div class='well'>
-	<span style="word-break: break-all;"><?= $model->summary ?></span>
+<div class="panel panel-<?= $panelType ?>">
+	<div class="panel-heading">Summary</div>
+	<div class='panel-body'>
+		<span style="word-break: break-all;"><?= $model->summary ?></span>
 	</div>
 </div>
