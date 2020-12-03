@@ -74,15 +74,15 @@ $this->title = 'Maintenance Panel';
             'detailOptions' => function($data){
                 if($data->status == 0)
                 {
-                    return GridView::TYPE_INFO;
+                    return ['class' => GridView::TYPE_INFO];
                 }
                 elseif($data->status == 1)
                 {
-                    return GridView::TYPE_WARNING;
+                    return ['class' => GridView::TYPE_WARNING];
                 }
                 elseif($data->status == 2)
                 {
-                    return GridView::TYPE_SUCCESS;
+                    return ['class' => GridView::TYPE_SUCCESS];
                 }
             },         
             'headerOptions' => ['class' => 'kartik-sheet-style'],
