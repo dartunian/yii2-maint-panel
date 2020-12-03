@@ -74,7 +74,7 @@ a.desc:after {
 
 .grid-view td {
     white-space: normal;
-    padding: 0px;
+    padding: 0px !important;
 }
 
 .grid-view .filters input,
