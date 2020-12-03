@@ -35,9 +35,22 @@ elseif($model->status == 2)
 {
 	$panelType = 'success';
 }
+
+if($model->type == 1)
+{
+	$status = 'Repair';
+}
+elseif($model->type == 2)
+{
+	$status = 'Request';
+}
+elseif($model->type == 3)
+{
+	$status = 'Other';
+}                     
 ?>
 <div class="panel panel-<?= $panelType ?>" style="border:0px;margin:-5px;border-radius:0px;">
-	<div class="panel-heading" style="border-radius:0px;">Status: <b><?= $model->status ?></b></div>
+	<div class="panel-heading" style="border-radius:0px;">Status: <b><?= $status ?></b></div>
 </div>
 <div class="panel panel-<?= $panelType ?>" style="border:0px;margin:-5px;border-radius:0px;">
 	<div class="panel-heading" style="border-radius:0px;">Summary</div>
