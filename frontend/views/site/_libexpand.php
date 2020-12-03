@@ -26,28 +26,18 @@ $this->registerJs($script2, \yii\web\View::POS_READY);
 if($model->status == 0)
 {
 	$panelType = 'info';
+	$status = 'Created';	
 }
 elseif($model->status == 1)
 {
 	$panelType = 'warning';
+	$status = 'In Progress';	
 }
 elseif($model->status == 2)
 {
 	$panelType = 'success';
-}
-
-if($model->type == 0)
-{
-	$status = 'Created';
-}
-elseif($model->type == 1)
-{
-	$status = 'In Progress';
-}
-elseif($model->type == 2)
-{
-	$status = 'Complete';
-}                     
+	$status = 'Complete';	
+}                    
 ?>
 <div class="panel panel-<?= $panelType ?>" style="border:0px;margin:-5px;border-radius:0px;">
 	<div class="panel-heading" style="border-radius:0px;">Status: <b><?= $status ?></b></div>
