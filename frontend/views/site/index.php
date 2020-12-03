@@ -73,7 +73,7 @@ $this->title = 'Maintenance Panel';
              },
             'detailRowCssClass' => GridView::TYPE_DEFAULT,
             'detailOptions' => function ($model, $key, $index, $column) {
-                $column['style'] = "padding:0px;";
+                $column->style = "padding:0px;";
             },
             'headerOptions' => ['class' => 'kartik-sheet-style'],
             'expandOneOnly' => true,
