@@ -78,7 +78,6 @@ $this->title = 'Maintenance Panel';
             'detailRowCssClass' => function($model, $key, $index, $column){
                 if($model->status == 0)
                 {
-                   
                 }
                 elseif($model->status == 1)
                 {
@@ -86,7 +85,6 @@ $this->title = 'Maintenance Panel';
                 elseif($model->status == 2)
                 {
                 }
-                return GridView::TYPE_SUCCESS;
             },              
         ],
         [
