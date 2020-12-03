@@ -37,6 +37,9 @@ elseif($model->status == 2)
 }
 ?>
 <div class="panel panel-<?= $panelType ?>" style="border:0px;margin:-5px;border-radius:0px;">
+	<div class="panel-heading" style="border-radius:0px;">Status: <b><?= $model->status ?></b></div>
+</div>
+<div class="panel panel-<?= $panelType ?>" style="border:0px;margin:-5px;border-radius:0px;">
 	<div class="panel-heading" style="border-radius:0px;">Summary</div>
 	<div class='panel-body'style="border-radius:0px;">
 		<span style="word-break: break-all;"><?= $model->summary ?></span>
