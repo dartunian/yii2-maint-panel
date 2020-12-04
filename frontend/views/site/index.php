@@ -103,7 +103,7 @@ $this->title = 'Maintenance Panel';
             'hAlign' => 'center',
             'vAlign' => 'middle',
             'mergeHeader' => true,
-            'value' => function($data){return StringHelper::truncate($data->name, 50);},            
+            'value' => function($data){return StringHelper::truncate($data->name, 30);},            
         ],			
         [
             'label' => 'Type',
