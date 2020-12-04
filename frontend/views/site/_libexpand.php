@@ -39,9 +39,9 @@ elseif($model->status == 2)
 	$status = 'Complete';	
 }                    
 ?>
-<div class="panel panel-<?= $panelType ?>" style="border:0px;margin:0px;border-radius:0px;box-shadow:0px;">
-	<div class="panel-heading" style="border-radius:0px;"><b>Status: </b><?= $status ?></div>
+<div class="panel panel-<?= $panelType ?>" style="border:0px;margin:0px;border-radius:0px;">
+	<div class="panel-heading" style="border-radius:0px;box-shadow:0px;"><b>Status: </b><?= $status ?></div>
 </div>
-<div class="panel panel-<?= $panelType ?>" style="border:0px;margin:0px;border-radius:0px;box-shadow:0px;">
-	<div class="panel-heading" style="border-radius:0px;"><b>Summary: </b><span style="word-break: break-all;"><?= $model->summary ?></span></div>
+<div class="panel panel-<?= $panelType ?>" style="border:0px;margin:0px;border-radius:0px;">
+	<div class="panel-heading" style="border-radius:0px;box-shadow:0px;"><b>Summary: </b><span style="word-break: break-all;"><?= $model->summary ?></span></div>
 </div>
