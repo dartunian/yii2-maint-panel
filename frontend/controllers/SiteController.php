@@ -58,10 +58,7 @@ class SiteController extends Controller
             ],
         ];
     }
-    public function actionRequirements()
-    {
-        return $this->render('requirements');
-    }
+    
     /**
      * Displays homepage.
      *
